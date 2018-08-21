@@ -74,7 +74,7 @@
       SWUpdatePopup,
       Overlay: () => import(/* webpackChunkName = "Overlay" */ '@theme/components/Overlay'),
       NavMobile: () => import(/* webpackChunkName = "NavMobile" */ '@theme/components/NavMobile'),
-      GlobalEvents: () => import(/* webpackChunkName = "GlobalEvents" */ './node_modules/vue-global-events/dist/vue-global-events.es'),
+      GlobalEvents: () => import(/* webpackChunkName = "GlobalEvents" */ 'vue-global-events'),
       SkipTo: () => import(/* webpackChunkName = "SkipTo" */ '@theme/components/SkipTo'),
       BackToTop: () => import(/* webpackChunkName = "BackToTop" */ '@theme/components/BackToTop')
     },
