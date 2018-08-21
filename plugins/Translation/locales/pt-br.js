@@ -1,0 +1,56 @@
+module.exports = {
+  // General
+  back: 'Voltar',
+  home: 'Home',
+  author: 'Autor',
+  authors: 'Autores',
+  posts: 'Artigos',
+  post: 'Artigo',
+  page: 'Página',
+  category: 'Categoria',
+  categories: 'Categorias',
+  navigation: 'Navegação',
+  see_post: 'ver post',
+  see_all_posts: 'ver todos os artigos',
+  no_search_results: 'Nenhum resultado encontrado',
+  more_posts: 'Mais artigos',
+  related_posts: 'Artigos relacionados',
+  all_posts_author: 'Todos os artigos de',
+  share: 'Compartilhe',
+  see_demo: 'Ver demo',
+  table_content: 'Índice',
+  avatar_of: 'Foto avatar de',
+  joined: 'Desde',
+  article: 'Artigo',
+  text_comments: 'Nos deixe um comentário, o que você achou?',
+  tip_contact: 'Entre em contato conosco',
+  title_contact: 'Quer fazer uma parceria? Vamos bater um papo, tomar um café.',
+  // No posts
+  no_more_posts: 'Em breve teremos mais artigos',
+  no_categories: 'Atualmente não temos categorias',
+  no_author_posts: 'O Author ainda não publicou nenhum artigo',
+  no_category_posts: 'Em breve teremos artigos para essa categoria',
+  // Newsletter
+  stay_in: 'Fique por dentro',
+  news_title: 'Receba nossos conteúdos mais recentes diretamente na sua caixa de entrada.',
+  subscribe: 'inscrever',
+  // 404 page
+  title_404: 'Opsss! Você está perdido, irei lhe ajudar.',
+  text_404: 'Pedimos desculpas pelo inconveniente se por acaso o link que você clicou está fora do ar, mas a gente resolve isso fácil, basta clicar no botão abaixo para voltar a página inicial. <br> Nós nos vemos por lá.',
+  back_to_homepage: 'Voltar para página inicial',
+  // Translate route path
+  path_route_categories: 'categorias',
+  path_route_posts: 'posts',
+  path_route_authors: 'autores',
+  path_route_contact: 'contato',
+  path_route_about: 'sobre',
+  path_route_privacy: 'privacidade',
+  path_route_search: 'pesquisar',
+  // Aria
+  aria_label_search: 'Digite sobre que assunto deseja pesquisar',
+  labelledby_cat_card_post: 'Ver todos os posts da categoria',
+  labelledby_post_card_post: 'Ver post sobre',
+  // Placeholders
+  ph_search: 'Encontre um artigo...',
+  ph_email: 'Digite aqui seu email'
+}
