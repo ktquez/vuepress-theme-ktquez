@@ -1,16 +1,19 @@
 <template>
-  <label for="switch-bw" class="switch-bw">
-    <input 
-      type="checkbox" 
-      id="switch-bw" 
-      name="switch-bw" 
-      class="switch-bw__input" 
-      @change="handle" 
-      :checked="toggle"
-      aria-labelledby="switch-bw-text">
-    <span class="switch-bw__ball"></span>
-    <span id="switch-bw-text" hidden>switch to black or white</span>
-  </label> 
+  <div class="switch-bw">
+    <span class="switch-bw__text">{{ $t('turnon_night_mode') }}</span>
+    <label for="switch-bw" class="switch-bw__label">
+      <input 
+        type="checkbox" 
+        id="switch-bw" 
+        name="switch-bw" 
+        class="switch-bw__input" 
+        @change="handle" 
+        :checked="toggle"
+        aria-labelledby="switch-bw-text">
+      <span class="switch-bw__ball"></span>
+      <span id="switch-bw-text" hidden>switch to black or white</span>
+    </label>
+  </div> 
 </template>
 
 <script>
@@ -47,12 +50,23 @@
 @import '~@theme/styles/config.styl'
 
 .switch-bw
-  position: relative
-  width: 40px
-  height: 20px
-  border-radius: 9px
-  background-color: #e2e2e2
-  cursor: pointer
+  display: flex
+
+  &__text
+    font-size: 8px
+    color: #999
+    text-transform: uppercase
+    margin-right: 12px
+    margin-top: 5px
+    letter-spacing: .5px
+
+  &__label
+    position: relative
+    width: 40px
+    height: 20px
+    border-radius: 9px
+    background-color: #e2e2e2
+    cursor: pointer
 
   &__ball
     position: absolute

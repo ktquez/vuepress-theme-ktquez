@@ -25,6 +25,9 @@ module.exports = {
   text_comments: 'Leave us a comment, what do you think?',
   tip_contact: 'Contact us',
   title_contact: 'Want to partner? Let\'s have a chat, have coffee.',
+  refresh: 'Refresh',
+  has_loaded: 'has loaded',
+  turnon_night_mode: 'Turn on night mode',
   // No posts
   no_more_posts: 'Soon we\'ll have more articles',
   no_categories: 'We currently have no categories',
@@ -52,5 +55,7 @@ module.exports = {
   labelledby_post_card_post: 'See post about',
   // Placeholders
   ph_search: 'find a post...',
-  ph_email: 'Enter your email here'
+  ph_email: 'Enter your email here',
+  // service workers
+  new_content: 'New content is available'
 }

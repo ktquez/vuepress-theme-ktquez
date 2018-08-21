@@ -150,7 +150,7 @@
     left: 0
     width: 100%
 
-    &__toggle
+    &__toggle.switch-bw
       display: none
 
   
