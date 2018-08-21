@@ -1,0 +1,217 @@
+.content.custom {
+  display: block
+  min-height: 150px
+  font-size: 16px
+  line-height: 1.8
+  color: $textColor
+  margin-bottom: 60px
+
+  p {
+    word-wrap: break-word
+    line-height: 1.5em
+    margin-bottom: 20px
+
+    code {
+      border-radius: 4px
+      background-color: #151718
+      color: white
+      font-size: $smallText
+      padding: 4px 10px
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6, ol, ul, pre, table, figure { margin-bottom: 1.2em }
+
+  h2 {
+    position: relative
+    margin-top: 3em
+    text-transform: capitalize
+    z-index: 2
+
+    .header-anchor {
+      position: absolute
+      top: -70px
+      left: -.5em
+      padding-right: 4px
+      color: $primaryColor
+      opacity: 0
+      text-decoration: none
+      font-size: 100px
+      transition: opacity 1s .5s
+      z-index: 1
+    }
+
+    &:hover {
+      .header-anchor {
+        opacity: .3
+        transition: opacity .5s
+      }
+    }
+  }
+  h1, h3, h4, h5, h6 {
+    .header-anchor { display: none }
+  }
+
+  a {
+    position relative
+    text-decoration none
+    color: $primaryColor
+  }
+
+  blockquote {
+    margin 2em 0 2em 1em
+    padding 4px 24px
+    font-style italic
+    color $gray-color
+    border-left .375em solid $primaryColor
+    p {
+      margin-top: 0
+      &:last-child { margin-bottom: 0 }
+    }
+    footer {
+      font-size 80%
+    }
+  }
+
+  strong {
+    font-weight: 600
+    margin: 0 0.2em
+  }
+
+  code, kbd {
+    display: inline
+    margin: 0 0.3em
+    padding: .125em .25em
+    box-shadow: none
+  }
+
+  ol, ul {
+    padding-left: 2em
+    list-style-type: initial
+  }
+
+  table {
+    width: 100%
+    border: 1px solid #dedede
+    border-collapse: collapse
+    border-spacing: 0
+
+    thead {
+      tr {
+        background: #f8f8f8
+      }
+    }
+
+    tbody {
+      tr {
+        &:hover {
+          background: #efefef
+        }
+      }
+    }
+
+    td, th {
+      border: 1px solid #dedede
+      padding: .375em .75em
+    }
+  }
+
+  hr {
+    border-top: 1px solid $borderColor
+    margin-top: 20px
+    margin-bottom: 20px
+  }
+
+  video, audio {
+    max-width: 100%
+  }
+
+  img {
+    width: 100%
+    margin-top: 10px
+    margin-bottom: 10px
+  }
+
+  div[class*=language-] {
+    margin-bottom: 30px
+  }
+
+  code[class*=language-] ,pre[class*=language-] {
+    background: none
+    text-align: left
+    white-space: pre
+    word-spacing: normal
+    word-break: normal
+    word-wrap: normal
+    line-height: 1.5
+    tab-size: 4
+    hyphens: none
+    font-size: $mediumText
+    font-weight: 500
+    color: lighten(#a074c4, 20%)
+  }
+
+  pre[class*=language-] {
+    position: relative
+    padding: 4em 1.5em 1.5em
+    margin: .5em 0
+    overflow: auto
+    border-radius: 6px
+
+    code {
+      margin: 0
+      padding: 0
+
+      &:before {
+        position: absolute
+        top: 16px
+        left: 18px
+        content: ''
+        width: 11px
+        height: 11px
+        border-radius: 50%
+        background-color: #FF5F56
+        box-shadow: 18px 0 0 0 #FFBD2E, 36px 0 0 0 #27C93F
+      }
+    }
+  }
+    
+  :not(pre)>code[class*=language-],pre[class*=language-] { 
+    background:#151718 
+  }
+  :not(pre)>code[class*=language-] {
+      padding: .1em
+      border-radius: .3em
+      white-space: normal
+  }
+  .token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog { color:#999 }
+  .token.punctuation { color:#ccc }
+  .token.attr-name,.token.deleted,.token.namespace,.token.tag { color:#e2777a }
+  .token.function-name { color:#6196cc }
+  .token.boolean,.token.function,.token.number { color:#55b5db }
+  .token.class-name,.token.constant,.token.property,.token.symbol { color:#f8c555 }
+  .token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector { color:#e6cd69 }
+  .token.attr-value,.token.char,.token.regex,.token.string,.token.variable { color: #7ec699 }
+  .token.entity,.token.operator,.token.url { color: #9fca56 }
+  .token.bold,.token.important { font-weight: 700 }
+  .token.italic { font-style: italic }
+  .token.entity { cursor: help }
+  .token.inserted { color: green }
+  .token.template-string > .token.string { color: rgba(255, 255, 255, .8) }
+
+  .highlighted-line {
+    display: block
+    margin: 0 -1.5rem
+    padding: 0 1.5rem
+    background-color: rgba(0, 0, 0, 66%)
+  }
+
+  *:first-child {
+    margin-top 0
+  }
+
+  iframe {
+    margin-top: 20px
+    margin-bottom: 20px
+  }
+}

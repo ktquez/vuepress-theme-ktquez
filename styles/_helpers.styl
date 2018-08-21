@@ -1,0 +1,65 @@
+@require './config'
+
+.fullX
+  width: 100%
+
+.reset-input, .reset-button
+  background-color: transparent
+  border none
+
+.reset-button
+  cursor pointer
+
+.txt-underline
+  text-decoration underline
+
+.txt-upper
+  text-transform uppercase
+
+.mt-30
+  margin-top: 30px
+
+.tac
+  text-align: center
+
+.fr
+  float: right
+
+.fl
+  float: left
+
+.inline-block
+  display: inline-block
+
+.no-pad
+  padding: 0
+
+.no-pad-l
+  padding-left: 0
+  
+.no-pad-r
+  padding-right: 0
+
+/**
+* VISIBILITY
+*/
+.xsShow
+  display: none
+  @media (max-width: $mobile)
+    display: block
+
+.xsNone
+  @media (max-width: $mobile)
+    display: none !important
+
+.smShow
+  @media (max-width: $max-tablet)
+    display: block !important
+
+.smNone
+  @media (min-width: $mobile) and (max-width: $max-tablet)
+    display: none
+
+.mdNone
+  @media (min-width: $max-tablet) and (max-width: $min-large)
+    display: none

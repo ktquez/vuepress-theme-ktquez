@@ -1,0 +1,93 @@
+@require './config'
+
+@font-face
+  font-family: 'Work Sans'
+  font-style: normal
+  font-weight: 400
+  font-display: auto
+  src: local('Work Sans'), local('WorkSans-Regular'), url(https://fonts.gstatic.com/s/worksans/v3/QGYsz_wNahGAdqQ43Rh_fKDp.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+
+@font-face
+  font-family: 'Work Sans'
+  font-style: normal
+  font-weight: 700
+  font-display: auto
+  src: local('Work Sans Bold'), local('WorkSans-Bold'), url(https://fonts.gstatic.com/s/worksans/v3/QGYpz_wNahGAdqQ43Rh3x4X8mNhN.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+
+@font-face
+  font-family: 'Hack'
+  src: url('../fonts/hack-regular.woff2?sha=3114f1256') format('woff2'), url('../fonts/hack-regular.woff?sha=3114f1256') format('woff');
+  font-weight: 400
+  font-style: normal
+  font-display: auto
+
+@font-face {
+  font-family: 'ktquez'
+  src:  url('../fonts/icons/ktquez.eot?5awxug')
+  src:  url('../fonts/icons/ktquez.eot?5awxug#iefix') format('embedded-opentype'),
+    url('../fonts/icons/ktquez.ttf?5awxug') format('truetype'),
+    url('../fonts/icons/ktquez.woff?5awxug') format('woff'),
+    url('../fonts/icons/ktquez.svg?5awxug#ktquez') format('svg')
+  font-weight: normal
+  font-style: normal
+}
+
+body
+  font-family: 'Work Sans', Lato, Calibri, Arial
+  font-weight: 400
+
+[class^="icon-"], [class*=" icon-"], .icon {
+  font-family: 'ktquez' !important
+  position: relative
+  speak: none
+  font-style: normal
+  font-weight: normal
+  font-variant: normal
+  text-transform: none
+  line-height: 1
+  
+  /* Enable Ligatures ================ */
+  letter-spacing: 0
+  -webkit-font-feature-settings: "liga"
+  -moz-font-feature-settings: "liga=1"
+  -moz-font-feature-settings: "liga"
+  -ms-font-feature-settings: "liga" 1
+  font-feature-settings: "liga"
+  -webkit-font-variant-ligatures: discretionary-ligatures
+  font-variant-ligatures: discretionary-ligatures
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+}
+
+.icon--arrow
+  font-size: 7px
+
+[class*="icon-"]
+  transition: color .5s
+
+.icon-twitter
+  &:hover
+    color: #1da1f2
+
+.icon-facebook
+  &:hover
+    color: #4267b2
+
+.icon-google
+  &:hover
+    color: #dc4a38
+
+.icon-site
+  &:hover
+    color: $primaryColor
+
+.icon-github
+  &:hover
+    color: #239a3b
+  
+code, kbd, pre, samp
+  font-family: 'Hack', monospace

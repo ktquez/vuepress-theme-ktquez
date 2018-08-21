@@ -1,0 +1,351 @@
+@require './config'
+@require './_typography'
+@require './_a11y'
+@require './_helpers'
+@require './_markdown'
+@require './nprogress'
+
+*
+  margin: 0
+  padding: 0
+
+body
+  color: $textColor
+  overflow-x: hidden
+  background-color: $bgColor
+
+a
+  text-decoration none
+  color: inherit
+
+  &:hover
+    color: $accentColor
+
+  &:active
+    color: $primaryColor  
+
+abbr
+  text-decoration: none
+
+ul, ol
+  list-style-type: none
+
+img.cover
+  position: relative
+  display: flex
+  width: 100%
+  line-height: 1em 
+  text-align: center
+  background-color: white
+  overflow: hidden
+
+  &:after
+    content: ""
+    background-image: url('/fallback.png')
+    background-size: 80px
+    background-position: center
+    background-repeat: no-repeat
+    background-color: $colorImageFallback
+    font-size: 14px
+    position: absolute
+    z-index: 2
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+.layout-main > .container-fluid
+  background-color: $bgColor
+
+.main
+  width: 100%
+  max-width: 1360px
+  padding-left: 24px
+  padding-right: 24px
+
+  @media (min-width: 1500px)
+    max-width: 1500px
+
+.container-fluid
+  padding: .4px
+  
+  @media (max-width: $mobile)  
+    padding: 0
+
+.row
+  margin: 0
+
+.column
+  @media (max-width: $max-tablet)
+    padding-right: 0 !important
+    padding-left: 0 !important
+
+  .column
+    padding-right: 0
+    padding-left: 0
+
+.box-default
+  border-radius: 20px
+  padding: 16px 20px
+  box-shadow: 1px 1px 99px #E2E2E2
+  background-color: white
+
+.meta-text
+  font-size: $smallText
+  text-transform: uppercase
+  font-weight: 400
+
+  &--primary
+    color: darken($primaryColor, 20%)
+
+.divider
+  border-top: 1px solid $borderColor
+  margin-top: 20px
+  margin-bottom: 20px
+  
+.page
+  margin-top: 50px
+
+  &__full
+    &__box
+      width: 95vw
+      padding: 0
+      border-bottom-right-radius: 0
+      border-top-right-radius: 0
+
+      @media (max-width: $mobile)
+        border-radius: 0
+
+      @media (min-width: $mobile)
+        max-width: 95vw !important
+
+    &-header, &-content
+      padding: 40px 60px
+
+      @media (max-width: $mobile)
+        padding: 10px 20px
+
+.page-header
+  .back-button
+    left: -25px
+
+  &__title
+    font-size: $title2
+    line-height: 1em
+    
+    @media (min-width: $min-large)
+      font-size: 2.5em
+      line-height: 1em
+      width: 80%
+
+  &__subtitle
+    font-size: $regularText
+    font-weight: 400
+    font-family: 'Georgia', 'Times New Roman, Times, serif'
+    font-style: italic
+    color: $textLightColor
+    margin-top: 10px
+    margin-bottom: 25px
+
+  &__meta
+    margin-top: 16px
+    margin-bottom: 10px
+
+    .text
+      font-size: $mediumText
+      color: $textLightColor
+
+    .icon
+      top: 1px
+
+  &__author
+    font-size: $smallText
+    margin-top: 10px
+
+    .link
+      color: $textColor
+      text-decoration: underline
+      margin-left: 6px
+
+  &-cat
+    &__nav
+      display: inline-block
+
+    &__list
+      position: relative
+      left: -10px
+
+    &__item
+      display: inline-flex
+
+      &:not(:last-child):after
+        content: '•'
+        color: $primaryColor
+        position: relative
+        top: 9px
+
+    &__link
+      margin-bottom: 4px
+      padding: 12px
+
+      &:hover
+        color: $primaryColor
+
+.section-newsletter
+  width: 100%
+  
+  &.row
+    margin-top: 150px
+    margin-bottom: 150px
+
+/* FIX PADDING TYPEFORM */
+.content.custom > .fix-typeform
+  overflow: hidden
+  min-height: 500px
+  .lazy-load-iframe
+    margin-top: -350px
+
+/* POSTS, AUTHOR PAGE */
+.posts-grid.row
+  margin-top: 30px
+
+  .card-title
+    height: 80px
+
+/* YOUTUBE PLAY */
+.youtube-play
+  position: relative
+  display: inline-block
+  width: 22px
+  height: 14px
+  background-color: $primaryColor
+  border-radius: 4px
+
+  &:before
+    content: '▶'
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    color: white
+    font-size: 7px
+
+/* SHAPES CSS TO FOOTER */
+.shapes
+  position: absolute
+  width: 20px
+  height: 20px
+  border-style: solid
+  border-width: 1px
+  border-color: white
+  z-index: 1
+  
+  &--circle
+    border-radius: 50%
+    
+  &--primary
+    border-color: $primaryColor
+    
+  &--color3
+    border-color: $color3
+  
+  &--color4
+    border-color: $color4
+
+/* TRANSITIONS */
+.bottom-top-enter-active 
+  transition: all .3s ease
+
+.bottom-top-leave-active 
+  transition: all .1s cubic-bezier(1.0, 0.5, 0.8, 1.0)
+
+.bottom-top-enter, .bottom-top-leave-to
+  transform: translateY(10px)
+  opacity: 0
+
+.nav-mobile-enter-active 
+  transition: all .2s .2s ease
+
+.nav-mobile-enter, .nav-mobile-leave-to
+  transform: translateY(-10px)
+  opacity: 0
+
+/* LINK EFFECT */
+.link
+  position relative
+  color $primaryColor
+  transition color .5s
+  text-decoration none
+
+  > span
+    position relative
+    z-index 2
+  
+  > .icon
+    padding-left: 4px
+    padding-right: 10px
+
+  &:hover
+    color $accentColor
+
+    &:before
+      width 120%
+
+  &:before
+    content ''
+    width 0
+    height 60%
+    left -5px
+    background-color white
+    position absolute
+    bottom 0
+    z-index 1
+    transition width .5s cubic-bezier(0.93, 0.01, 0, 0.98)
+
+  &--filler-primary, &--filler-s-primary
+    &:before
+      background-color $primaryColor
+
+  &--filler-accent
+    &:before
+      background-color $accentColor
+
+  &--filler-red, &--filler-s-google
+    &:before
+      background-color red
+
+  &--filler-black
+    &:before
+      background-color black
+
+  &--filler-green
+    &:before
+      background-color green
+
+  &--filler-s-github
+    &:before
+      background-color black
+
+  &--filler-s-youtube
+    &:before
+      background-color red
+
+  &--filler-s-facebook
+    &:before
+      background-color #3b5998
+
+  &--filler-s-twitter
+    &:before
+      background-color #1da1f2
+
+  &--filler-s-linkedin
+    &:before
+      background-color #0077b5
+
+  &[class*='--filler-s']
+    &:hover
+      color white
+
+    &:before
+      height 180%
+      bottom -5px
