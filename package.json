@@ -1,0 +1,45 @@
+{
+  "name": "vuepress-theme-ktquez",
+  "version": "0.1.0",
+  "description": "A blog theme for VuePress by Ktquez",
+  "scripts": {
+    "dev": "node_modules/.bin/vuepress dev src",
+    "build": "node_modules/.bin/vuepress build src",
+    "release": "standard-version",
+    "projectPublish": "git push --follow-tags origin master && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ktquez/vuepress-theme-ktquez.git"
+  },
+  "keywords": [
+    "vuepress",
+    "theme",
+    "ktquez",
+    "vuejs",
+    "static",
+    "jekyll",
+    "documentation",
+    "blog"
+  ],
+  "author": "Alan Ktquez <ktquez@gmail.com> (https://ktquez.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ktquez/vuepress-theme-ktquez/issues"
+  },
+  "homepage": "https://github.com/ktquez/vuepress-theme-ktquez#readme",
+  "dependencies": {
+    "carbon-grid": "^1.1.2",
+    "elevator.js": "^1.0.1",
+    "get-youtube-id": "^1.0.0",
+    "mappet": "^4.0.0",
+    "nprogress": "^0.2.0",
+    "time-ago": "^0.2.1",
+    "vue-announcer": "^1.0.2",
+    "vue-disqus": "^3.0.4",
+    "vue-global-events": "^1.0.3"
+  },
+  "devDependencies": {
+    "standard-version": "^4.4.0"
+  }
+}
