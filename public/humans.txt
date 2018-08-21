@@ -1,0 +1,24 @@
+Humans.txt é uma iniciativa legal da (humanstxt.org), para falar um pouco sobre quem está por trás dos aplicativos construídos na web, a equipe envolvida e a pilha usada. 
+Lembrando, somos seres humanos e não máquinas.
+Muito obrigado a você que acessou o Impresssd - Comentários para suas fotos pessoais e profissionais
+
+/* PROJECT */
+  Site name:
+  Site URL: 
+  Last update: 
+  Language: 
+  Twitter:
+  Contact:
+  Built with: Vue.js (Vuepress), HTML5, CSS3, Accessibility techniques, PWA e SEO
+  Software: Visual Code Studio (VS Code)
+
+/* AUTHOR */
+	Name:        Alan Ktquez
+	Nickname:    ktquez
+	Title:       CEO & Founder HTML Moderno and Ktquez Play
+	Location:    Recife. Pernambuco, Brazil
+	Site:        https://ktquez.com/
+	Site:        https://htmlmoderno.com.br/
+  Twitter:     https://twitter.com/ktquez/
+  Github:      https://github.com/ktquez/
+	Donation:    https://www.patreon.com/ktquez
