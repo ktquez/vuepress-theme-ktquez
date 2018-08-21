@@ -1,0 +1,28 @@
+import mappet from 'mappet'
+import { cdn, getTime } from '@theme/services/utils'
+
+const schema = {
+  title: 'title',
+  key: 'key',
+  path: 'path',
+  demo: 'frontmatter.demo',
+  audio: 'frontmatter.audio',
+  author: 'frontmatter.author',
+  excerpt: 'frontmatter.excerpt',
+  categories: 'frontmatter.categories',
+  tags: 'frontmatter.tags',
+  created_at: 'frontmatter.created_at',
+  updated_at: 'frontmatter.updated_at',
+  cover: 'frontmatter.cover',
+  coverAlt: 'frontmatter.coverAlt',
+  video: 'frontmatter.video',
+  coverName: { path: 'path', modifier: cdn },
+  created_time: { path: 'frontmatter.created_at', modifier: getTime }
+}
+
+export function post (data) {
+  const mapper = mappet(schema)
+  return data.map(item => {
+    return mapper(item)
+  })
+}
