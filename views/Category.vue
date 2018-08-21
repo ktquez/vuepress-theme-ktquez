@@ -1,0 +1,92 @@
+<template>
+  <div class="page category">
+    <section class="row page-header">
+      <div class="column xs-100">
+        <back-button />
+      </div>
+      <div class="column xs-100">
+        <h1 class="page-header__title">{{ $page.frontmatter.title }}</h1>
+        <h2 class="page-header__subtitle">{{ $page.frontmatter.excerpt }}</h2>
+      </div>
+      <div class="column xs-100">
+        <hr class="divider">
+      </div>
+      <div class="column xs-100 page-header-cat">
+        <categories :inline="true" />
+      </div>
+    </section>
+
+    <section v-if="hasPosts" class="row posts-grid">
+      <div         
+        class="column md-50 mt-30"
+        v-for="post in getPostsByCategory(0, 4)"
+        :key="post.key">
+        <card-post
+          :item="post"
+          cover="right" />
+      </div>
+    </section>
+
+    <section v-else class="row posts-grid mt-30">
+      <div class="column sm-50">
+        <h2>😔 {{ $t('no_category_posts') }}.</h2>
+      </div>
+    </section>
+
+    <section class="row section-newsletter justify-center" v-if="$themeConfig.newsletter.active">
+      <div class="column sm-100 md-67 xl-50">
+        <newsletter />
+      </div>
+    </section>
+
+    <section class="row posts-grid">
+      <div 
+        class="column md-50 mt-30"
+        v-for="post in getPostsByCategory(4)"
+        :key="post.key">
+        <card-post
+          :item="post"
+          cover="right" />
+      </div>
+    </section>
+
+  </div>
+</template>
+
+<script>
+  import CardPost from '@theme/components/CardPost'
+  import Categories from '@theme/components/Categories'
+
+  export default {
+    name: 'Category',
+
+    components: {
+      CardPost,
+      Categories,
+      BackButton: () => import(/* webpackChunkName = "BackButton" */ '@theme/components/BackButton'),
+      Newsletter: () => import(/* webpackChunkName = "Newsletter" */ '@theme/components/Newsletter')
+    },
+
+    computed: {
+      hasPosts () {
+        return this.getPostsByCategory(0).length
+      }
+    },
+
+    methods: {
+      getPosts (start, end) {
+        return [...this.$posts].splice(start, (end || this.$posts.length))
+      },
+
+      getPostsByCategory (start, end) {
+        return this.getPosts(start, end).filter(post => {
+          return post.categories.includes(this.$page.frontmatter.slug)
+        })
+      }
+    }
+  }
+</script>
+
+<style lang="stylus">
+@import '~@theme/styles/config.styl'
+</style>
