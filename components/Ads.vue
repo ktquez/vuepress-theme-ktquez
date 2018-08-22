@@ -73,8 +73,8 @@
   cursor: pointer
 
 .bizu-image
-  width: 50%
-  padding-right: 10px
+  width: 45%
+  padding-right: 20px
   
   &__image
     width: 100%
@@ -83,7 +83,7 @@
 
 .bizu-info
   position: relative
-  width: 50%
+  width: 55%
 
   &__text
     margin-top: 10px
@@ -92,9 +92,8 @@
     line-height: $regularText
 
   &__by
-    position: absolute
-    left: 0
-    bottom: 0
+    position: relative
+    margin-top: 10px
     font-size: $smallText
     color: $textLightColor
 

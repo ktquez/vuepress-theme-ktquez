@@ -37,7 +37,7 @@
 .ui-input-field.reset-input
   font-family: inherit
   font-size: $regularText
-  padding: 10px
+  padding: 10px 24px
   border-radius: 60px
   background-color: white
   color: $textColor

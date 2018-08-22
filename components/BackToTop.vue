@@ -84,7 +84,7 @@
   &__link
     position: fixed
     border-radius: 50%
-    padding: 14px 18px
+    padding: 12px 18px
     display: inline-block
     transition: bottom .5s
     right: 12vw
@@ -108,6 +108,7 @@
     transform: rotate(270deg)
     font-size: 20px
     color: white
+    top: 2px
 
 @keyframes fire
   from

@@ -88,7 +88,8 @@
 
   &__button
     position: relative
-    right: 16px
+    right: 17px
+    top: -1px
 
 @media (max-width: $mobile)
   .newsletter
