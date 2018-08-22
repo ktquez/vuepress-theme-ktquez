@@ -26,9 +26,11 @@
     },
 
     created () {
+      const data = this.content || (this.date instanceof Date ? this.date : new Date(this.date))
       import(`@theme/components/Time/locales/${this.lang || this.$lang}.js`).then(module => {
-        const data = this.content || (this.date instanceof Date ? this.date : new Date(this.date))
         this.result = this.translate(timeago[this.type](data), module.default)
+      }).catch(() => {
+        this.result = timeago[this.type](data)
       })
     },
 
