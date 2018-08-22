@@ -75,8 +75,12 @@
 <script>
   import CardPost from '@theme/components/CardPost'
 
+  import PostsMixin from '@theme/mixins/Posts'
+
   export default {
     name: 'AllPosts',
+
+    mixins: [PostsMixin],
 
     components: {
       CardPost,
@@ -94,7 +98,7 @@
 
     methods: {
       getPosts (start, end) {
-        return [...this.$posts].splice(start, (end || this.$posts.length))
+        return [...this.postsByLang].splice(start, (end || this.postsByLang.length))
       },
 
       getPostsByAuthor (start, end) {

@@ -34,8 +34,12 @@
   import MorePosts from '@theme/components/MorePosts'
   import Sidebar from '@theme/components/Sidebar'
 
+  import PostsMixin from '@theme/mixins/Posts'
+
   export default {
     name: 'Home',
+
+    mixins: [PostsMixin],
 
     components: {
       Sidebar,
@@ -46,11 +50,11 @@
 
     computed: {
       latestPosts () {
-        return [...this.$posts].slice(0, 3)
+        return [...this.postsByLang].slice(0, 3)
       },
 
       morePosts () {
-        return [...this.$posts].splice(3, 9)
+        return [...this.postsByLang].splice(3, 9)
       }
     }
   }

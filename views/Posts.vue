@@ -51,8 +51,12 @@
   import CardPost from '@theme/components/CardPost'
   import Categories from '@theme/components/Categories'
 
+  import PostsMixin from '@theme/mixins/Posts'
+
   export default {
     name: 'AllPosts',
+
+    mixins: [PostsMixin],
 
     components: {
       CardPost,
@@ -68,12 +72,12 @@
 
       filterPosts () {
        if (this.tag) {
-         return this.$posts.filter(post => {
+         return this.postsByLang.filter(post => {
            if (!post.tags.length) return
            return post.tags.includes(this.tag)
          })
        }
-       return this.$posts
+       return this.postsByLang
       }
     },
 
