@@ -3,7 +3,7 @@
     class="header" 
     :class="{ 'header--search-open': searchOpened }"
     itemscope itemtype="https://schema.org/Organization">
-    <navigation class="header-navigation" />
+    <navigation class="header-navigation" v-if="$themeConfig.topNavigation" />
     <div class="row header-top">
       <div class="column xs-33 sm-20">
         <menu-hamburguer 
