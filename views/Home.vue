@@ -7,11 +7,11 @@
       <div class="column md-50">
         <div class="row">
           <div class="column sm-100">
-            <card-post :item="latestPosts[1]" :cover="false" />
+            <card-post v-if="latestPosts[1]" :item="latestPosts[1]" :cover="false" />
           </div>
 
           <div class="column sm-100 mt-30">
-            <card-post :item="latestPosts[2]" :cover="false" />
+            <card-post v-if="latestPosts[2]" :item="latestPosts[2]" :cover="false" />
           </div>
         </div>
       </div>
