@@ -209,6 +209,7 @@
 
       &:hover
         text-decoration: underline
+        color: white
 
 .footer-copy
   color: white

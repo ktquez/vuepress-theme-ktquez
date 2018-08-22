@@ -133,6 +133,7 @@
     
     img
       margin: 0 10px
+      max-width: 37px
 
   &__languages
     position: absolute
