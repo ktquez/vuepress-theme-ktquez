@@ -14,7 +14,7 @@
         <languages class="header-top__languages" />
       </div>
       <div class="column xs-33 sm-60">
-        <router-link class="header-top__logo" to="/" itemprop="url">
+        <router-link class="header-top__logo" :to="$localeConfig.path" itemprop="url">
           <logo itemprop="logo" />
         </router-link>
 
