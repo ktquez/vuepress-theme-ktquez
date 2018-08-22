@@ -18,7 +18,9 @@
     computed: {
       navTop () {
         return this.$site.pages.filter(page => {
-          return page.frontmatter.view === 'category' && page.frontmatter.top
+          if (page.frontmatter.view === 'category') {
+            return page.frontmatter.top && page.frontmatter.lang === this.$localeConfig.lang
+          }
         }).sort((a, b) => a.frontmatter.order - b.frontmatter.order)
       }
     }

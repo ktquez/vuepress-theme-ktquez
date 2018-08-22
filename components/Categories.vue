@@ -5,7 +5,7 @@
         class="categories__item"
         :class="{ 'categories__item--inline': inline }"
         v-if="$categories.length"
-        v-for="category in $categories"
+        v-for="category in getCategories"
         :key="category.key">
           <router-link class="categories__link" :to="category.path">
             <bullet v-if="bullets" :type="category.frontmatter.slug" size="small" />
@@ -36,6 +36,16 @@
 
     components: {
       bullet: () => import(/* webpackChunkName = "Bullet" */ '@theme/components/Bullet')
+    },
+
+    computed: {
+      getCategories () {
+        return this.$site.pages.filter(page => {
+          if (page.frontmatter.view === 'category') {
+            return page.frontmatter.lang === this.$localeConfig.lang
+          }
+        }).sort((a, b) => a.frontmatter.order - b.frontmatter.order)
+      }
     }
   }
 </script>
