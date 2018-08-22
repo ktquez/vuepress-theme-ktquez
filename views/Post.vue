@@ -172,7 +172,7 @@
       getCategories () {
         return this.$categories.filter(category => {
           if (this.currentPost.categories.includes(category.frontmatter.slug)) {
-            return category
+            if (category.frontmatter.lang === this.$localeConfig.lang) return category
           }
         })
       },
