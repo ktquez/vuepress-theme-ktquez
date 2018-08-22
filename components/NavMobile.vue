@@ -29,8 +29,9 @@
     computed: {
       getItemsNavMobile () {
         const categories = this.$categories.map(category => {
+          if (category.frontmatter.lang !== this.$localeConfig.lang) return
           return { label: category.frontmatter.title, path: category.path }
-        })
+        }).filter(category => category)
         return [...this.$themeLocaleConfig.footer.nav1.items, ...categories]
       }
     }
