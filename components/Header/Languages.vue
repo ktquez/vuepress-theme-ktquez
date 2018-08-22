@@ -53,6 +53,7 @@
   padding: 10px
   transition: all .5s
   cursor: pointer
+  z-index: 2
 
   &__box
     display: inline-block
@@ -61,6 +62,8 @@
     height: 0
     overflow: hidden
     transition: all .2s
+    padding-left: 2px
+    padding-right: 14px
 
   &__item
     margin-bottom: 2px

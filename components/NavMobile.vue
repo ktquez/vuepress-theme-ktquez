@@ -75,7 +75,7 @@
     .bullet
       width: 6px
       height: 6px
-      top: 4px
+      top: 5px
       margin-right: 8px
 
     &:hover

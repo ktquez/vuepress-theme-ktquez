@@ -89,6 +89,7 @@
     margin-top: 10px
     font-size: $mediumText
     color: lighten($textColor, 20%)
+    line-height: $regularText
 
   &__by
     position: absolute
