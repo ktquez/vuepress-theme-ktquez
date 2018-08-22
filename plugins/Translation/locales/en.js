@@ -28,6 +28,7 @@ module.exports = {
   refresh: 'Refresh',
   has_loaded: 'has loaded',
   turnon_night_mode: 'Turn on night mode',
+  turnoff_night_mode: 'Turn off night mode',
   // No posts
   no_more_posts: 'Soon we\'ll have more articles',
   no_categories: 'We currently have no categories',

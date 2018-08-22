@@ -28,6 +28,7 @@ module.exports = {
   refresh: 'Atualizar',
   has_loaded: 'foi carregada',
   turnon_night_mode: 'Ativar modo noturno',
+  turnoff_night_mode: 'Desligar modo noturno',
   // No posts
   no_more_posts: 'Em breve teremos mais artigos',
   no_categories: 'Atualmente não temos categorias',

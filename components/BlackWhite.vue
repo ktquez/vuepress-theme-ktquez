@@ -1,6 +1,7 @@
 <template>
   <div class="switch-bw">
-    <span class="switch-bw__text">{{ $t('turnon_night_mode') }}</span>
+    <span class="switch-bw__text" v-if="!toggle">{{ $t('turnon_night_mode') }}</span>
+    <span class="switch-bw__text" v-else>{{ $t('turnoff_night_mode') }}</span>
     <label for="switch-bw" class="switch-bw__label">
       <input 
         type="checkbox" 
