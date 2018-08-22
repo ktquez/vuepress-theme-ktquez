@@ -42,7 +42,7 @@
   import Category from '@theme/views/Category'
   import Author from '@theme/views/Author'
   import Authors from '@theme/views/Authors'
-  import Sitemap from '@theme/views/Sitemap'
+  import Categories from '@theme/views/Categories'
 
   // plugins
   import EventBus from '@theme/plugins/EventBus'
@@ -66,7 +66,7 @@
       Posts,
       Author,
       Authors,
-      Sitemap,
+      Categories,
       Category,
       LayoutBase,
       LayoutPost,

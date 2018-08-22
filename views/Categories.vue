@@ -39,7 +39,7 @@
   import Categories from '@theme/components/Categories'
 
   export default {
-    name: 'Sitemap',
+    name: 'Categories',
 
     components: {
       Categories,
