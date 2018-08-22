@@ -108,11 +108,7 @@
       color: $primaryColor
 
 .card-author-info
-  padding-top: 4px
-
   &__title
-    margin-top: 4px
-
     @media (max-width: $max-tablet)
       font-size: $regularText
 
@@ -133,8 +129,6 @@
       font-size: $smallText
 
 .card-author-social
-  margin-top: 8px
-
   &__list
     margin-left: -12px
 

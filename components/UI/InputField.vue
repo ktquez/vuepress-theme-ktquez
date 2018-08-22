@@ -34,7 +34,7 @@
 <style lang="stylus">
 @import '~@theme/styles/config.styl'
 
-.ui-input-field
+.ui-input-field.reset-input
   font-family: inherit
   font-size: $regularText
   padding: 10px

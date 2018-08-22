@@ -237,11 +237,11 @@
   .footer-nav
     order: 1
 
-  .footer-nav__box--1
+  .footer-nav__box--1.column
     text-align: left
     padding-left: 5vw !important
   
-  .footer-nav__box--2
+  .footer-nav__box--2.column
     padding-right: 5vw !important
 
   .footer-nav1__item a
