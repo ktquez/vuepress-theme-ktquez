@@ -22,7 +22,7 @@
             </time-provider>
             <meta itemprop="dateModified" content="currentPost.updated_at">
             
-            <time-provider type="mintoread" :content="getContent('innerText')">
+            <time-provider type="mintoread" v-if="getContent('innerText')" :content="getContent('innerText')">
               <span class="text" slot-scope="{ time }" v-show="time">
                 - <span class="icon">clock</span> <span>{{ time }}</span>
               </span>
@@ -99,7 +99,7 @@
               <div class="post-content__excerpt">
                 <h2 class="page-header__subtitle" itemprop="description">{{ currentPost.excerpt }}</h2>
               </div>
-              <div class="post-content__table-contents">
+              <div class="post-content__table-contents" v-if="$page.headers">
                 <table-contents :headers="$page.headers" />
               </div>
               <div ref="content" itemprop="articleBody">
