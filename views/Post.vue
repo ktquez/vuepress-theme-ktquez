@@ -56,7 +56,7 @@
             <img    
               class="post-cover__image cover"
               itemprop="url"  
-              :src="`${currentPost.coverName}.png`" 
+              :src="`${currentPost.coverName}.${$themeConfig.responsive.ext}`"
               :alt="currentPost.coverAlt">
           </responsive-picture>
         </section>

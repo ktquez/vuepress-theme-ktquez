@@ -28,8 +28,9 @@
 
       getSrcSet () {
         const src = {}
-        this.$themeConfig.responsive.breakpoints.forEach(breakpoint => {
-          src[breakpoint] = `${this.coverName},w_${breakpoint}.png`
+        const responsive = this.$themeConfig.responsive
+        responsive.breakpoints.forEach(breakpoint => {
+          src[breakpoint] = `${this.coverName},w_${breakpoint}.${responsive.ext}`
         })
         return src
       },

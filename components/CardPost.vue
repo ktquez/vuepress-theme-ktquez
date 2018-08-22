@@ -21,7 +21,7 @@
             <responsive-picture :coverName="item.coverName">
               <img    
                 class="card-cover__image card-cover__image--top cover"
-                :src="`${item.coverName},w_680.png`" 
+                :src="`${item.coverName},w_${lastBreakpoint}.${extension}`" 
                 :alt="item.coverAlt"> 
             </responsive-picture>
           </router-link>
@@ -101,7 +101,16 @@
         return this.$site.pages.filter(page => {
           return page.frontmatter.slug === this.item.categories[0]
         })[0]
-      }      
+      },
+
+      lastBreakpoint () {
+        const bp = this.$themeConfig.responsive.breakpoints
+        return bp[bp.length - 1] || 680
+      },
+
+      extension () {
+        return this.$themeConfig.responsive.ext || 'png'
+      }
     },
 
     methods: {
@@ -110,9 +119,9 @@
       },
       getSideImage (coverName) {
         if (this.$themeConfig.responsive.active) {
-          return `${coverName},w_${this.$themeConfig.responsive.breakpoints[0]}.png`
+          return `${coverName},w_${this.$themeConfig.responsive.breakpoints[0]}.${this.extension}`
         }
-        return `${coverName}.png`
+        return `${coverName}.${this.extension}`
       }
     }
   }
