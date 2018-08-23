@@ -19,7 +19,7 @@ export default {
 
   methods: {
     youtubeEmbed (src) {
-      if (!src.includes('youtube.com')) return false
+      if (!src.includes('youtube.com') || this.tag !== 'iframe') return false
       const id = getYouTubeID(src)
       return `https://www.youtube.com/embed/${id}`
     }
