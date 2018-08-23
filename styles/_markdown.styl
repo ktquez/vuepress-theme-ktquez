@@ -21,16 +21,27 @@
   }
 
   h1, h2, h3, h4, h5, h6, ol, ul, pre, table, figure { margin-bottom: 1.2em }
+  
+  h1, h3, h4, h5, h6 {
+    .header-anchor { display: none }
+  }
 
   h2 {
     position: relative
-    margin-top: 3em
+    margin-top: 60px
     text-transform: capitalize
     z-index: 2
+    font-size: $title1
+    line-height $title1
+    margin-bottom: 0
+
+    + p {
+      margin-top: 30px
+    }
 
     .header-anchor {
       position: absolute
-      top: -70px
+      top: 0px
       left: -.5em
       padding-right: 4px
       color: $primaryColor
@@ -48,8 +59,12 @@
       }
     }
   }
-  h1, h3, h4, h5, h6 {
-    .header-anchor { display: none }
+
+  h3 {
+    font-size: $title2
+    line-height: $title2
+    margin-top: 30px
+    margin-bottom: 20px
   }
 
   a {
