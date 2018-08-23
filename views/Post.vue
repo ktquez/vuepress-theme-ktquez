@@ -327,6 +327,10 @@
   &__disqus
     margin-top: 60px
 
+  &__excerpt > .page-header__subtitle
+    font-size: 21px
+    line-height: 1.58em
+
 .post-sidebar
   &__bizu
     margin-top: 40px

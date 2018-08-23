@@ -8,14 +8,19 @@
 
   p {
     word-wrap: break-word
-    line-height: 1.5em
-    margin-bottom: 20px
+    margin-bottom: 40px
+    font-size: 20px
+    line-height: 1.58em
+
+    @media (max-width: $mobile) {
+      font-size: 18px
+    }
 
     code {
       border-radius: 4px
       background-color: #151718
       color: white
-      font-size: $smallText
+      font-size: $mediumText
       padding: 4px 10px
     }
   }
@@ -31,8 +36,8 @@
     margin-top: 60px
     text-transform: capitalize
     z-index: 2
-    font-size: $title1
-    line-height $title1
+    font-size: 42px
+    line-height 1.04em
     margin-bottom: 0
 
     + p {
@@ -61,8 +66,8 @@
   }
 
   h3 {
-    font-size: $title2
-    line-height: $title2
+    font-size: 32px
+    line-height: 1.10em
     margin-top: 30px
     margin-bottom: 20px
   }
@@ -103,6 +108,8 @@
   ol, ul {
     padding-left: 2em
     list-style-type: initial
+    margin-top: 40px
+    margin-bottom: 40px
   }
 
   table {
@@ -142,11 +149,15 @@
   }
 
   img {
-    width: 100%
-    margin-top: 10px
-    margin-bottom: 10px
+    max-width: 100%
+    margin-top: 30px
+    margin-bottom: 30px
   }
 
+  .observer {
+    text-align: center
+  }
+    
   div[class*=language-] {
     margin-bottom: 30px
   }
