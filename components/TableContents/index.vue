@@ -52,8 +52,10 @@
 @import '~@theme/styles/config.styl'
 
 .table-contents
-  width: 300px
-  width: max-content
+  width: 100%
+
+  @media (max-width: $mobile)
+    max-width: 300px
 
   &__title
     font-size: $title1
