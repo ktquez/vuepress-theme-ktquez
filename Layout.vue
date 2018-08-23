@@ -4,9 +4,9 @@
     :class="{ 'layout-main__nm--opened': nmOpened, 'layout-main__negative': negative }"
     itemscope itemtype="https://schema.org/WebPage">
 
-    <meta itemprop="name" content="HTML Moderno">
-    <meta itemprop="alternateName" content="HTML Moderno">
-    <meta itemprop="url" content="https://htmlmoderno.com.br/">
+    <meta itemprop="name" :content="$site.title">
+    <meta itemprop="alternateName" :content="$site.title">
+    <meta itemprop="url" :content="$themeConfig.url">
 
     <transition name="nav-mobile">
       <nav-mobile v-show="nmOpened" @click="closeMenu" />

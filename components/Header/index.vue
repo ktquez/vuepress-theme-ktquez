@@ -18,13 +18,12 @@
           <logo itemprop="logo" />
         </router-link>
 
-        <meta itemprop="name" content="HTML Moderno">
-        <meta itemprop="sameAs" content="https://www.facebook.com/groups/htmlmoderno/">
-        <meta itemprop="sameAs" content="https://www.facebook.com/htmlmoderno/">
-        <meta itemprop="sameAs" content="https://twitter.com/htmlmoderno/">
-        <meta itemprop="sameAs" content="https://github.com/htmlmoderno/">
-        <meta itemprop="sameAs" content="https://www.youtube.com/channel/UCByMpqccsCqL42LMzKIMnBg/">
-        <meta itemprop="sameAs" content="https://plus.google.com/u/3/108837093816785343826/">
+        <meta itemprop="name" :content="$site.title">
+        <meta 
+          v-for="social in $themeLocaleConfig.social"
+          :key="`meta-${social.facebook}`"
+          itemprop="sameAs"
+          :content="social.link">
 
       </div>
       <div class="column xs-33 sm-20">

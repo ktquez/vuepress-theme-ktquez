@@ -31,17 +31,7 @@
     width: 6px
     height: 6px
 
-  &--html, &--semantica, &--primary
-    background-color: $color1
-  &--acessibilidade
-    background-color: $color2
-  &--seo
-    background-color: $color3
-  &--ux
-    background-color: $color4
-  &--webperformance
-    background-color: $color5
-  &--webcomponents
-    background-color: $color6
+  &--primary
+    background-color: $colorPrimary
 
 </style>
