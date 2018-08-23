@@ -21,7 +21,7 @@
         <meta itemprop="name" :content="$site.title">
         <meta 
           v-for="social in $themeLocaleConfig.social"
-          :key="`meta-${social.facebook}`"
+          :key="`meta-org-${social.name}`"
           itemprop="sameAs"
           :content="social.link">
 
