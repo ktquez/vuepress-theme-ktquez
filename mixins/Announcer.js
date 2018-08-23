@@ -15,7 +15,7 @@ export default {
   
     this.$router.afterEach(() => {
       setTimeout(() => {
-        this.$announcer.set(document.title.trim() + this.$t('has_loaded'))
+        this.$announcer.set(document.title.trim() + ' ' + this.$t('has_loaded'))
       }, 2500)
     })
   }
