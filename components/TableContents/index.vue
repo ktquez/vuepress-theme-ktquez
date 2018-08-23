@@ -80,7 +80,7 @@
   &__link
     color: $textColor
     text-transform: uppercase
-    font-size: $smallText
+    font-size: $mediumText
     font-weight: bold
     padding: 10px
 
