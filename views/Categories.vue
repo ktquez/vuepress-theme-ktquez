@@ -38,8 +38,12 @@
 <script>
   import CategoriesList from '@theme/components/CategoriesList'
 
+  import PostsMixin from '@theme/mixins/Posts'
+
   export default {
     name: 'Categories',
+
+    mixins: [PostsMixin],
 
     components: {
       CategoriesList,
@@ -50,9 +54,9 @@
     computed: {
       getAllTags () {
         const result = []
-        if (!this.$posts.length) return result
-        const tags = this.$posts.map(post => {
-          if (post.lang === this.$localeConfig.lang) return post.tags
+        if (!this.postsByLang.length) return result
+        const tags = this.postsByLang.map(post => {
+          return post.tags
         }).reduce((prev, current) => {
           return prev.concat(current)
         })
