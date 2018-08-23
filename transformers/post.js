@@ -5,6 +5,7 @@ const schema = {
   title: 'title',
   key: 'key',
   path: 'path',
+  lang: 'frontmatter.lang',
   demo: 'frontmatter.demo',
   audio: 'frontmatter.audio',
   author: 'frontmatter.author',
