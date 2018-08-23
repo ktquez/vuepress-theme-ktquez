@@ -52,7 +52,7 @@
         const result = []
         if (!this.$posts.length) return result
         const tags = this.$posts.map(post => {
-          return post.tags
+          if (post.lang === this.$localeConfig.lang) return post.tags
         }).reduce((prev, current) => {
           return prev.concat(current)
         })
