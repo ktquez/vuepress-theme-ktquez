@@ -76,7 +76,7 @@
                 <share-post :post="currentPost" />
               </lazy-load>
             </div>
-            <div class="column no-pad-r sm-50 post-demo-button">
+            <div v-if="currentPost.demo" class="column no-pad-r sm-50 post-demo-button">
               <a :href="currentPost.demo" target="_blank" aria-labelledby="see-demo">
                 <kt-button type="submit" color="primary">
                   <span class="txt-upper">{{ $t('see_demo') }}</span>
