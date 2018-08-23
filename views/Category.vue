@@ -12,7 +12,7 @@
         <hr class="divider">
       </div>
       <div class="column xs-100 page-header-cat">
-        <categories :inline="true" />
+        <categories-list :inline="true" />
       </div>
     </section>
 
@@ -55,14 +55,14 @@
 
 <script>
   import CardPost from '@theme/components/CardPost'
-  import Categories from '@theme/components/Categories'
+  import CategoriesList from '@theme/components/CategoriesList'
 
   export default {
     name: 'Category',
 
     components: {
       CardPost,
-      Categories,
+      CategoriesList,
       BackButton: () => import(/* webpackChunkName = "BackButton" */ '@theme/components/BackButton'),
       Newsletter: () => import(/* webpackChunkName = "Newsletter" */ '@theme/components/Newsletter')
     },

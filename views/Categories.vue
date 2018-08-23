@@ -15,7 +15,7 @@
     <section class="row sitemap-body">
       <div class="column sm-50 sitemap-body__categories">
         <h2 class="sitemap-body__title">{{ $t('categories') }}</h2>
-        <categories />
+        <categories-list />
       </div>
       <div class="column sm-50 sitemap-body__tags tags">
         <h2 class="sitemap-body__title">{{ $t('Tags') }}</h2>
@@ -36,13 +36,13 @@
 </template>
 
 <script>
-  import Categories from '@theme/components/Categories'
+  import CategoriesList from '@theme/components/CategoriesList'
 
   export default {
     name: 'Categories',
 
     components: {
-      Categories,
+      CategoriesList,
       BackButton: () => import(/* webpackChunkName = "BackButton" */ '@theme/components/BackButton'),
       Newsletter: () => import(/* webpackChunkName = "Newsletter" */ '@theme/components/Newsletter')
     },

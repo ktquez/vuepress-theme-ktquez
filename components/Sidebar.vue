@@ -3,19 +3,19 @@
     <ads class="sidebar__bizu"/>
     <div class="sidebar__categories">
       <h3 class="meta-text meta-text--primary">{{ $t('categories') }}</h3>
-      <categories />
+      <categories-list />
     </div>
   </div>
 </template>
 
 <script>
-  import Categories from '@theme/components/Categories'
+  import CategoriesList from '@theme/components/CategoriesList'
 
   export default {
     name: 'Sidebar',
 
     components: {
-      Categories,
+      CategoriesList,
       ads: () => import(/* webpackChunkName = "Ads" */ '@theme/components/Ads')
     }
   }
