@@ -40,7 +40,11 @@
               </ul>
             </nav>
           </div>
-          <div class="page-header__author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+          <div 
+            v-if="getAuthor"
+            class="page-header__author" 
+            itemprop="author" 
+            itemscope itemtype="https://schema.org/Person">
             <strong>{{ $t('author') }}: </strong>
             <router-link class="link link--filler-s-primary" rel="author" itemprop="url" :to="getAuthor.path">
               <span itemprop="name">{{ getAuthor.frontmatter.name }}</span>
@@ -184,9 +188,12 @@
       },
 
       getAuthor () {
-        return this.$authors.filter(author => {
-          return author.frontmatter.nickname === this.currentPost.author
-        })[0]
+        const [author] = this.$authors.filter(author => {
+          const fm = author.frontmatter
+          return fm.nickname === this.currentPost.author && fm.lang === this.$localeConfig.lang
+        })
+        if (author) return author
+        return this.$authors.filter(author => author.frontmatter.nickname === this.currentPost.author)[0]
       },
 
       relatedPosts () {
