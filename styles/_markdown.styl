@@ -8,13 +8,7 @@
 
   p {
     word-wrap: break-word
-    margin-bottom: 40px
-    font-size: 20px
-    line-height: 1.58em
-
-    @media (max-width: $mobile) {
-      font-size: 18px
-    }
+    margin-bottom: 40px    
 
     code {
       border-radius: 4px
@@ -22,6 +16,15 @@
       color: white
       font-size: $mediumText
       padding: 4px 10px
+    }
+  }
+
+  p, ol, ul {
+    font-size: 19px
+    line-height: 1.58em
+
+    @media (max-width: $mobile) {
+      font-size: 17px
     }
   }
 
@@ -110,6 +113,10 @@
     list-style-type: initial
     margin-top: 40px
     margin-bottom: 40px
+
+    li:not(:last-child) {
+      margin-bottom: 16px
+    }
   }
 
   table {
