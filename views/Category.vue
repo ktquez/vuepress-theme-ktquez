@@ -93,4 +93,11 @@
 
 <style lang="stylus">
 @import '~@theme/styles/config.styl'
+
+.posts-grid
+  .card-category
+    margin-bottom: 10px
+    &__link
+      display: none
+      
 </style>

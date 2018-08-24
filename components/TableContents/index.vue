@@ -59,6 +59,7 @@
 
   &__title
     font-size: $title1
+    line-height: 1em
     margin-bottom: 30px
 
   &__item
