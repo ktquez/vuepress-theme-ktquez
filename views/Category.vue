@@ -57,8 +57,12 @@
   import CardPost from '@theme/components/CardPost'
   import CategoriesList from '@theme/components/CategoriesList'
 
+  import PostsMixin from '@theme/mixins/Posts'
+
   export default {
     name: 'Category',
+
+    mixins: [PostsMixin],
 
     components: {
       CardPost,
@@ -75,7 +79,7 @@
 
     methods: {
       getPosts (start, end) {
-        return [...this.$posts].splice(start, (end || this.$posts.length))
+        return [...this.postsByLang].splice(start, (end || this.postsByLang.length))
       },
 
       getPostsByCategory (start, end) {
