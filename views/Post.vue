@@ -132,7 +132,7 @@
         </section>
       </article>      
     </div>
-    <section class="row section-newsletter justify-center" v-if="$themeConfig.newsletter.active">
+    <section v-if="$themeLocaleConfig.newsletter.action" class="row section-newsletter justify-center">
       <div class="column sm-100 md-67 xl-50">
         <newsletter />
       </div>

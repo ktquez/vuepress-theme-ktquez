@@ -22,7 +22,7 @@
       </ul>
 
       <div class="footer-newsletter">
-        <newsletter />
+        <newsletter v-if="$themeLocaleConfig.newsletter.action" />
       </div>
     </div>
     <section class="footer-box3">

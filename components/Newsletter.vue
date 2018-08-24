@@ -5,7 +5,7 @@
     <form 
       class="newsletter__form"
       method="post"
-      :action="action">
+      :action="_action">
         <label :for="`email_news-${id}`" class="newsletter__label">
           <kt-input 
             type="email" 
@@ -39,18 +39,20 @@
 
     props: {
       action: {
-        type: String,
-        default () {
-          return this.$themeConfig.newsletter.action
-        }
+        type: String
       }
     },
 
     data () {
       return {
         email: '',
+        _action: '',
         id: new Date().getTime()
       }
+    },
+
+    created () {
+      this._action = this.action || this.$themeLocaleConfig.newsletter.action
     }
   }
 </script>
