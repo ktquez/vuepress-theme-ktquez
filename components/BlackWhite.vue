@@ -1,7 +1,10 @@
 <template>
   <div class="switch-bw">
-    <span class="switch-bw__text" v-if="!toggle">{{ $t('turnon_night_mode') }}</span>
-    <span class="switch-bw__text" v-else>{{ $t('turnoff_night_mode') }}</span>
+    <span 
+      class="switch-bw__text" 
+      :class="{ 'switch-bw__text--turnon': toggle }">
+      {{ getText }}
+    </span>
     <label for="switch-bw" class="switch-bw__label">
       <input 
         type="checkbox" 
@@ -26,6 +29,12 @@
     data () {
       return {
         toggle: false
+      }
+    },
+
+    computed: {
+      getText () {
+        return !this.toggle ? this.$t('turnon_night_mode') : this.$t('turnoff_night_mode')
       }
     },
 
@@ -55,11 +64,14 @@
 
   &__text
     font-size: 8px
-    color: #999
+    color: black
     text-transform: uppercase
     margin-right: 12px
     margin-top: 5px
     letter-spacing: .5px
+
+    &--turnon
+      color: white
 
   &__label
     position: relative
