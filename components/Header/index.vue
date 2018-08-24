@@ -14,9 +14,12 @@
         <languages class="header-top__languages" />
       </div>
       <div class="column xs-33 sm-60">
-        <router-link class="header-top__logo" :to="$localeConfig.path" itemprop="url">
-          <logo itemprop="logo" />
-        </router-link>
+        <h1 class="header-top-logo">
+          <router-link :to="$localeConfig.path" class="header-top-logo__link" itemprop="url">
+            <logo itemprop="logo" />
+          </router-link>
+          <span class="header-top-logo__title">{{ $site.title }}</span>
+        </h1>
 
         <meta itemprop="name" :content="$site.title">
         <meta 
@@ -108,13 +111,27 @@
     bottom: -35px
     right: 10px
 
-  &__logo
+  &-logo
     display: block
     font-weight: bold
     position: relative
     text-align: center
     width: 100%
     transition: opacity .5s .5s ease-in-out, top .5s .5s ease-in-out
+
+    &__link
+      position: relative
+      background-color: white
+      z-index: 1
+      display: inline-block
+      width: 100%
+
+    &__title
+      position: absolute 
+      left: 0
+      top: 0
+      z-index: 0
+      font-size: 10px
 
     @media (max-width: $max-tablet)
       left: initial
