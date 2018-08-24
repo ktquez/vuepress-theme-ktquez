@@ -17,7 +17,7 @@
           </span>
         </div>
         <div class="card-cover" v-if="isCoverPosition('top')">
-          <router-link :to="item.path">
+          <router-link :to="item.path" :aria-labelledby="`sr-link-post-${item.key}`">
             <responsive-picture :coverName="item.coverName">
               <img    
                 class="card-cover__image card-cover__image--top cover"
