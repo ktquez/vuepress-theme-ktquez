@@ -28,8 +28,8 @@
     <section class="footer-box3">
       <div class="row">
         <div class="column sm-50 footer-card">
-          <lazy-load v-if="$authors.length">
-            <card-author class="footer__card-author" :shadow="false" :author="$authors[0]" />
+          <lazy-load v-if="getAuthor.length">
+            <card-author class="footer__card-author" :shadow="false" :author="getAuthor[0]" />
             <div class="watermark-logo"></div>
           </lazy-load>
         </div>
@@ -94,6 +94,14 @@
       CardAuthor: () => import(/* webpackChunkName = "CardAuthor" */ '@theme/components/CardAuthor'),
       Newsletter: () => import(/* webpackChunkName = "Newsletter" */ '@theme/components/Newsletter'),
       LazyLoad: () => import(/* webpackChunkName = "LazyLoad" */ '@theme/components/lazy/load')
+    },
+
+    computed: {
+      getAuthor () {
+        return this.$authors.filter(author => {
+          return author.frontmatter.lang === this.$localeConfig.lang
+        })
+      }
     }
   }
 </script>

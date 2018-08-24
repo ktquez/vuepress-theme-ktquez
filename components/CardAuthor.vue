@@ -20,7 +20,7 @@
         <router-link 
           itemprop="url" 
           class="card-author__link" 
-          :to="`/${$t('path_route_authors')}/${author.frontmatter.nickname}.html`">
+          :to="`${$localeConfig.path}${$t('path_route_authors')}/${author.frontmatter.nickname}.html`">
           <h3 itemprop="name" class="card-author-info__title">{{ author.frontmatter.name }}</h3>
         </router-link>
 
@@ -52,8 +52,12 @@
 </template>
 
 <script>
+  import PostsMixin from '@theme/mixins/Posts'
+  
   export default {
     name: 'CardAuthor',
+
+    mixins: [PostsMixin],
 
     components: {
       bullet: () => import(/* webpackChunkName = "Bullet" */ '@theme/components/Bullet'),
@@ -73,7 +77,7 @@
 
     methods: {
       getPostsByAuthor (nickname) {
-        return this.$posts.filter(post => {
+        return this.postsByLang.filter(post => {
           return post.author === nickname
         })
       },
