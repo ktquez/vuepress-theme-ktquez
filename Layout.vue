@@ -11,10 +11,10 @@
     <transition name="nav-mobile">
       <nav-mobile v-show="nmOpened" @click="closeMenu" />
     </transition>
-    <skip-to to="#main" text="Skip to main content" />
     <transition :name="transitionName">
       <component :is="layout" class="wrapper-body__nm" :class="{ 'wrapper-body__nm--opened': nmOpened }">
         <div slot="view">          
+          <skip-to to="#main" :text="$t('skip_to_main_content')" />
           <component :is="view" />
           <global-events @keyup.esc="cancel" />
           <back-to-top /> 
