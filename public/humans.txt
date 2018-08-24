@@ -1,6 +1,5 @@
-Humans.txt é uma iniciativa legal da (humanstxt.org), para falar um pouco sobre quem está por trás dos aplicativos construídos na web, a equipe envolvida e a pilha usada. 
-Lembrando, somos seres humanos e não máquinas.
-Muito obrigado a você que acessou o Impresssd - Comentários para suas fotos pessoais e profissionais
+Humans.txt is a legal initiative of (humanstxt.org), to talk a little about who is behind the web-based applications, the team involved and the stack used.
+Remembering, we are human beings and not machines.
 
 /* PROJECT */
   Site name:
