@@ -1,5 +1,5 @@
 <template>
-  <a class="vue-skip-to" :href="to" :tabindex="tabindex" v-text="text"></a>
+  <a class="vue-skip-to" :href="to" v-text="text"></a>
 </template>
 
 <script>
@@ -14,10 +14,6 @@ export default {
     to: {
       type: String,
       default: '#main'
-    },
-    tabindex: {
-      type: [Number, null],
-      default: null
     }
   },
   
