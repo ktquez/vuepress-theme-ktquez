@@ -147,6 +147,7 @@
 
 <script>
   import ContentMixin from '@theme/mixins/Content'
+  import PostsMixin from '@theme/mixins/Posts'
 
   import MorePosts from '@theme/components/MorePosts'
   import Sidebar from '@theme/components/Sidebar'
@@ -155,7 +156,7 @@
   export default {
     name: 'Post',
 
-    mixins: [ContentMixin],
+    mixins: [ContentMixin, PostsMixin],
 
     components: {
       Sidebar,
@@ -197,7 +198,7 @@
       },
 
       relatedPosts () {
-        return [...this.$posts].splice(3, 9)
+        // return [...this.postsByLang].splice(3, 9)
       },
 
       getPlayer () {
