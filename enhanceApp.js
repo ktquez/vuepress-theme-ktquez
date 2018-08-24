@@ -9,6 +9,9 @@ export default ({ Vue, siteData }) => {
   Vue.prototype.$authors = getAuthors(siteData.pages)
 
   Vue.use(Translation)
+
+  // Global components to use in markdown
+  Vue.component('lazy-load', () => import('@theme/components/lazy/load'))
 }
 
 function getPosts (pages) {
