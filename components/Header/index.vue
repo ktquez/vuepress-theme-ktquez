@@ -99,7 +99,7 @@
 
 .header-top
   position: relative
-  padding: 30px 20px
+  padding: 30px 20px 24px
   background-color: white
   
   &__hamburguer
