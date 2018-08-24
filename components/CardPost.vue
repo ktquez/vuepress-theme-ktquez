@@ -99,7 +99,7 @@
     computed: {
       getCurrentCategory () {
         return this.$site.pages.filter(page => {
-          return page.frontmatter.slug === this.item.categories[0]
+          return this.item.lang === page.frontmatter.lang && page.frontmatter.slug === this.item.categories[0]
         })[0]
       },
 
