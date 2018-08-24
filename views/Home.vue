@@ -23,7 +23,7 @@
       </div>
     </section>
 
-    <more-posts :posts="morePosts">
+    <more-posts class="home__see-more" :posts="morePosts">
       <sidebar slot="sidebar" />
     </more-posts>
   </div>
@@ -68,4 +68,6 @@
     @media (max-width: $max-tablet)
       margin-bottom: 30px
 
+  &__see-more.row
+    margin-top: 50px
 </style>
