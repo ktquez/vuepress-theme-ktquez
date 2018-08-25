@@ -26,20 +26,3 @@ export function sortArrayByProp (arr, prop, orderBy = 'asc') {
 export function getTime (date) {
   return new Date(date).getTime()
 }
-
-export function twitterWidgetApi () {
-  window.twttr = ((d, s, id) => {
-    var fjs = d.getElementsByTagName(s)[0]
-    var t = window.twttr || {}
-    if (d.getElementById(id)) return t
-    let js = d.createElement(s)
-    js.id = id
-    js.src = 'https://platform.twitter.com/widgets.js'
-    fjs.parentNode.insertBefore(js, fjs)
-    t._e = []
-    t.ready = (f) => {
-      t._e.push(f)
-    }
-    return t
-  })(document, 'script', 'twitter-wjs')
-}

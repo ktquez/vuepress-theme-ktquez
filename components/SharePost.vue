@@ -51,14 +51,14 @@
     },
 
     methods: {
-      getFullURL () {
-        return this.$themeConfig.url + this.post.path
+      getFullURL (source) {
+        return this.$themeConfig.url + this.post.path + `?utm_source=${source}&utm_medium=single-post&utm_campaign=share`
       },
 
       getLinkInfo (post, network) {
         const twitterVia = network.name === 'twitter' ? this.$themeLocaleConfig.share.twitterVia : null
         return network.link(
-          post.title, this.getFullURL(), 
+          post.title, this.getFullURL(network.name), 
           `${post.coverName}.${this.$themeConfig.responsive.ext}`, 
           post.excerpt, 
           twitterVia
@@ -98,7 +98,7 @@
           method: 'feed',
           display: 'popup',
           name: meta.name,
-          link: meta.link,
+          link: meta.link + '?utm_source=facebook&utm_medium=single-post&utm_campaign=share',
           picture: meta.picture,
           caption: meta.caption,
           description: meta.description
@@ -108,7 +108,20 @@
       snippetTwitter () {
         if (window.twttr) return
         /* twitter */
-        twitterWidgetApi()
+        window.twttr = ((d, s, id) => {
+          var fjs = d.getElementsByTagName(s)[0]
+          var t = window.twttr || {}
+          if (d.getElementById(id)) return t
+          let js = d.createElement(s)
+          js.id = id
+          js.src = 'https://platform.twitter.com/widgets.js'
+          fjs.parentNode.insertBefore(js, fjs)
+          t._e = []
+          t.ready = (f) => {
+            t._e.push(f)
+          }
+          return t
+        })(document, 'script', 'twitter-wjs')
       },
 
       handle (network) {
