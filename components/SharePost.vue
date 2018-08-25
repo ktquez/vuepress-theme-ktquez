@@ -59,7 +59,7 @@
         const twitterVia = network.name === 'twitter' ? this.$themeLocaleConfig.share.twitterVia : null
         return network.link(
           post.title, this.getFullURL(network.name), 
-          `${post.coverName}.${this.$themeConfig.responsive.ext}`, 
+          `${this.$themeConfig.url}${post.coverName}.${this.$themeConfig.responsive.ext}`, 
           post.excerpt, 
           twitterVia
         )
@@ -90,7 +90,7 @@
       facebook (fb) {
         const meta = fb.meta(
           this.post.title, this.$el.baseURI, 
-          `${this.post.coverName}.${this.$themeConfig.responsive.ext}`,
+          `${this.$themeConfig.url}${this.post.coverName}.${this.$themeConfig.responsive.ext}`,
           this.post.excerpt, 
           this.$themeLocaleConfig.share.facebookCaption
         )
