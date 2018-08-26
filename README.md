@@ -3,6 +3,14 @@ A blog theme for VuePress by Ktquez 🤘
 
 > Vuepress does not yet have native support for blogs, but this theme has some practices and customizations to turn into a blog.
 
+## Vuepress theme ktquez starter
+
+I know the theme colors seem like a lot of work though, I've created a [boilerplate](https://github.com/ktquez/vuepress-ktquez-theme-starter) with the settings and structure of folders organized, just clone the repository and change the information for your blog, modify the images and start using.
+
+https://github.com/ktquez/vuepress-ktquez-theme-starter
+
+---
+
 ## Table of Contents
 - [Installation](#installation)
 - [Configuration](#configuration)
@@ -13,8 +21,8 @@ A blog theme for VuePress by Ktquez 🤘
 - [Frontmatter](#frontmatter)
 - [Override CSS](#override-css-stylus)
 - [Accessibility](#the-best-pratice-of-accessibility-includes)
+- [Lazy-Load](#lazy-load)
 - [And more](#the-best-pratice-of-accessibility-includes)
-- [Theme Starter (soon)](#vuepress-theme-ktquez-starter)
 - [Tools](#tools)
 
 
@@ -297,19 +305,19 @@ meta:
 ---
 view: post
 layout: post
-lang: pt-br             // Lang by locale of post (required)
-author: ktquez          // Nickname author 
+lang: pt-br             # Lang by locale of post (required)
+author: ktquez          # Nickname author 
 title: My First post
 description: 
 excerpt:
-cover: true             // If true it displays the cover image of the post, if it has no image, leave it as false
-coverAlt:               // cover alt text
-demo:                   // If you have demo link, insert here, to display the demo demo button in post
+cover: true             # If true it displays the cover image of the post, if it has no image, leave it as false
+coverAlt:               # cover alt text
+demo:                   # If you have demo link, insert here, to display the demo demo button in post
 categories:
-  - vuejs                // slug of category
+  - vuejs               # slug of category
   - javascript
 tags: 
-  - tag1                // You may feel free to create tags, it will be used on the category page
+  - tag1                # You may feel free to create tags, it will be used on the category page
   - tag2
   - tag3
 created_at: 2018-08-22 11:00 
@@ -330,13 +338,13 @@ meta:
 ```yaml
 ---
 view: category
-lang: pt-br       // Lang by locale of post (required)
-order: 1
-top: true
+lang: pt-br       # Lang by locale of post (required)
+order: 1          # Order of display in list categories
+top: true         # Include category in navigation Top
 title: Vue.js
 description: 
 excerpt: 
-slug: vuejs       // Used in post yaml for the array of categories
+slug: vuejs       # Used in post yaml for the array of categories
 ---
 ```
 
@@ -345,11 +353,11 @@ slug: vuejs       // Used in post yaml for the array of categories
 ```yaml
 ---
 view: author
-lang: pt-br                       // Lang by locale of post (required)
+lang: pt-br                       # Lang by locale of post (required)
 title: Articles by Alan Ktquez
 description: 
 name: Alan Ktquez
-nickname: ktquez                  // Used in post yaml to indicate the author
+nickname: ktquez                  # Used in post yaml to indicate the author
 role: Web developer
 avatar: /authors/avatar_author.png
 created_at: 2018-08-22
@@ -376,7 +384,7 @@ view: page
 title: 
 description: 
 excerpt: 
-ctaContact: true    // Show call-to-action to contact page. If there is no contact page, set it to false
+ctaContact: true    # Show call-to-action to contact page. If there is no contact page, set it to false
 ---
 ```
 
@@ -408,6 +416,27 @@ In addition to good practices such as:
 - Customization of alternative texts in images;
 - Card posts with descriptive links using aria-labelledby;
 - Among others
+
+# Lazy-load
+
+It is possible to delay media loading using the global component <lazy-load>.
+
+In any markdown files you can to use this component, for example load a Youtube video
+
+```html
+<lazy-load tag="iframe" :data="{ src: 'https://www.youtube.com/watch?v=lIv1ItUzktc' }" />
+```
+
+Or for images:
+
+```html
+<lazy-load tag="img" :data="{ src: 'https://octodex.github.com/images/stormtroopocat.jpg', alt: 'The Stormtroopocat' }" />
+```
+
+This component uses the [IntersectionObserver API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) to display the elements.
+You can check [this link for support of this API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#Browser_compatibility)
+
+If you want to use and support older browsers, you can use [this polyfill](https://github.com/w3c/IntersectionObserver)
 
 
 # And more
@@ -479,13 +508,6 @@ themeConfig: {
   ...
 }
 ```
-
-
-# Vuepress theme ktquez starter
-
-I know that the settings of the theme seem like a lot of work, so I'll leave here in the next few days a boilerplate for you to clone and modify little thing and be able to raise your blog quickly without much configuration.
-
-**Soon link here**
 
 ## Tools
 Tools that can help you:
