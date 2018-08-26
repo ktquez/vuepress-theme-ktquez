@@ -23,7 +23,7 @@ module.exports = {
       lang: 'en'
     },
     '/pt/': {
-      lang: 'pt'
+      lang: 'pt-br'
     }
   },
   themeConfig: {
@@ -106,8 +106,7 @@ The texts that are in the theme are translated and currently the theme has inclu
 ```js
 themeConfig: {
   locales: {
-    ...
-    /es/: {
+    '/es/': {
       languages: { label: 'Spanish', shortname: 'ES' },
       translation: {
         back: 'Atrás',
@@ -116,17 +115,16 @@ themeConfig: {
         ...
       }
     },
-    /fr/: {
+    '/fr/': {
       languages: { label: 'French', shortname: 'FR' },
       translation: {
         back: 'arrière',
-        home: 'Page d'accueil',
+        home: 'Page d\'accueil',
         author: 'auteur',
         ...
       }
     }
   }
-  ...
 }
 ```
 
@@ -141,14 +139,14 @@ To make the newsletter form appear, simply add the action of your newsletter.
 themeConfig: {
   locales: {
     ...
-    /: {
+    '/': {
       ...
       newsletter: {
         provider: 'mailchimp',
         action: 'MY_ACTION_FOR_ENGLISH_USERS'
       },
     },
-    /es/: {
+    '/pt/': {
       ...
       newsletter: {
         provider: 'mailchimp',
@@ -196,7 +194,267 @@ Because the images are defined by the post structure, for the images of another 
 > If you don't want to use responsive images, simply disable
 
 
+# Structure directores (Suggestion)
 
+In `src/`
+
+```
+index.md
+about/
+--- README.md
+contact/
+--- README.md
+categories/
+--- README.md
+--- category1.md
+--- category2.md
+posts/
+--- README.md
+--- my-first-post.md
+pt/
+--- posts/
+--- --- README.md
+--- --- meu-primeiro-post.md
+--- categorias
+--- --- README.md
+--- --- categoria1.md
+--- --- categoria2.md
+--- contato/
+--- --- README.md
+--- about/
+--- --- README.md
+es/
+...
+```
+
+**There are `key: value` in [translations of routes](https://github.com/ktquez/vuepress-theme-ktquez/blob/master/plugins/Translation/locales/en.js#L46), if you do not have your language or want to rename, just add in translation translation**
+
+
+# Frontmatter
+
+## Home
+```yaml
+---
+view: home
+title: my title
+description: my description
+meta:
+  - property: og:image
+    content: https://my_domain.com/share/my-site-image-share.png
+  - name: twitter:image
+    content: https://my_domain.com/share/my-site-image-share.png
+---
+```
+
+
+## Post
+
+```yaml
+---
+view: post
+layout: post
+lang: pt-br             // Lang by locale of post (required)
+author: ktquez          // Nickname author 
+title: My First post
+description: 
+excerpt:
+cover: true             // If true it displays the cover image of the post, if it has no image, leave it as false
+coverAlt:               // cover alt text
+demo:                   // If you have demo link, insert here, to display the demo demo button in post
+categories:
+  - vuejs                // slug of category
+  - javascript
+tags: 
+  - tag1                // You may feel free to create tags, it will be used on the category page
+  - tag2
+  - tag3
+created_at: 2018-08-22 11:00 
+updated_at: 2018-08-22 11:00
+meta:
+  - property: og:image
+    content: https://my_domain.com/images/posts/my-first-post.png
+  - name: twitter:image
+    content: https://my_domain/images/posts/my-first-post.png
+---
+```
+
+**For more examples, just see the [posts of Ktquez play](https://github.com/ktquezplay/webapp/tree/master/src/en/posts)**
+
+
+## Category
+
+```yaml
+---
+view: category
+lang: pt-br       // Lang by locale of post (required)
+order: 1
+top: true
+title: Vue.js
+description: 
+excerpt: 
+slug: vuejs       // Used in post yaml for the array of categories
+---
+```
+
+## Author
+
+```yaml
+---
+view: author
+lang: pt-br                       // Lang by locale of post (required)
+title: Articles by Alan Ktquez
+description: 
+name: Alan Ktquez
+nickname: ktquez                  // Used in post yaml to indicate the author
+role: Web developer
+avatar: /authors/avatar_author.png
+created_at: 2018-08-22
+social:
+  - name: twitter
+    url: https://twitter.com/author
+  - name: github
+    url: https://github.com/author
+  - name: site
+    url: https://author_site.com
+meta:
+  - property: og:image
+    content: https://my_domain.com/authors/avatar_author.png
+  - name: twitter:image
+    content: https://my_domain.com/authors/avatar_author.png
+---
+```
+
+## Page
+
+```yaml
+---
+view: page
+title: 
+description: 
+excerpt: 
+ctaContact: true    // Show call-to-action to contact page. If there is no contact page, set it to false
+---
+```
+
+# Override CSS (Stylus)
+
+To overwrite the theme variables to customize colors and etc, simply create a file in `.vuepress/override.styl`, por exemplo:
+
+```stylus
+$primaryColor = #AE4967
+$accentColor = #35495E
+
+$color1 = #41b883
+$colorImageFallback = $accentColor
+
+$firstFooterColor = #35495E
+$secondFooterColor = #263647
+```
+
+**To see all the variables, [access this link](https://github.com/ktquez/vuepress-theme-ktquez/blob/master/styles/config.styl)**
+
+# The best pratice of accessibility includes
+
+The theme uses some plugins from the [Vue A11y project](https://github.com/vue-a11y)
+- [Vue announcer](https://github.com/vue-a11y/vue-announcer);
+- [Vue skip to](https://github.com/vue-a11y/vue-skip-to);
+
+In addition to good practices such as:
+- Nocturne mode
+- Customization of alternative texts in images;
+- Card posts with descriptive links using aria-labelledby;
+- Among others
+
+
+# And more
+
+## Anaytics campaign in posts
+
+All posts sharing icons links are included in analytics campaign parameters.
+`?utm_source=SOCIALNAMECLICKED&utm_medium=share&utm_campaign=single-post`
+
+> With this you can analyze the interaction and shares of your posts.
+
+## Fonts
+
+The theme have as fonts:
+- [Poppins](https://fonts.google.com/specimen/Poppins) - All site
+- [Hack](https://sourcefoundry.org/hack/) - For code blocks
+
+> To overwrite the fonts, simply use the `.vuepress/style.styl`. [Ver doc vuepress](https://vuepress.vuejs.org/default-theme-config/#migrate-your-styles-to-style-styl)
+
+## Assets
+
+You can copy some assets from the [public folder of the theme](https://github.com/ktquez/vuepress-theme-ktquez/tree/master/public), they server for you to configure some images as well as files to turn your blog into a PWA (for example the file [manifest.json](https://github.com/ktquez/vuepress-theme-ktquez/tree/master/public)).
+
+
+## Ads
+
+You can also insert ads in the blog, which are displayed in the sidebar of the home page and the right side of the post.
+Ads are built through an array of objects that we can insert into each themeConfig locale, [example taken from my personal blog](https://github.com/ktquezplay/webapp/blob/master/src/.vuepress/config/locales/en/ads.js)
+
+```js
+themeConfig: {
+  locales: {
+    ...
+    '/': {
+      ...
+      ads: [
+        {
+          text: 'Did you know that Udemy has more than 300 web development courses for only R $ 21.99?',
+          link: 'http://bit.ly/desenvolvimento-web-udemy',
+          image: {
+            src: 'ads/web-development-portugues.png',
+            alt: 'Illustration of a user studying online'
+          },
+          by: {
+            text: 'udemy.com',
+            link: 'http://bit.ly/all-courses-udemy'
+          }
+        }
+      ],
+    },
+    '/es/': {
+      ...
+      ads: [
+        {
+          text: 'Você sabia que a Udemy tem mais de 300 cursos de desenvolvimento web por apenas R$ 21,99?',
+          link: 'http://bit.ly/desenvolvimento-web-em-portugues-udemy',
+          image: {
+            src: '/web-development-portugues.png',
+            alt: 'Ilustração de um usuário estudando online'
+          },
+          by: {
+            text: 'udemy.com',
+            link: 'http://bit.ly/all-courses-udemy'
+          }
+        }
+      ]
+    }
+  }
+  ...
+}
+```
+
+
+# Vuepress theme ktquez starter
+
+I know that the settings of the theme seem like a lot of work, so I'll leave here in the next few days a boilerplate for you to clone and modify little thing and be able to raise your blog quickly without much configuration.
+
+**Soon link here**
+
+
+## License
+
+[MIT](https://github.com/ktquez/vuepress-theme-ktquez/blob/master/LICENSE)
+
+## Contributing
+- Check the open issues or open a new issue to start a discussion around your feature idea or the bug you found.
+- Fork repository, make changes and send a pull request
+
+If you want a faster communication, find me on [@ktquez](https://twitter.com/ktquez)
+
+**Thank you**
 
 
 
