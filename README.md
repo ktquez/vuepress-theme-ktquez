@@ -240,34 +240,34 @@ Because the images are defined by the post structure, for the images of another 
 
 # Structure directores (Suggestion)
 
-In `src/`
-
 ```
-index.md
-about/
---- README.md
-contact/
---- README.md
-categories/
---- README.md
---- category1.md
---- category2.md
-posts/
---- README.md
---- my-first-post.md
-pt/
---- posts/
---- --- README.md
---- --- meu-primeiro-post.md
---- categorias
---- --- README.md
---- --- categoria1.md
---- --- categoria2.md
---- contato/
---- --- README.md
---- about/
---- --- README.md
-es/
+├── .vuepress
+├── index.md
+├── about/
+|   ├── README.md
+├── contact/
+|   ├── README.md
+├── categories/
+|   ├── README.md
+|   ├── category1.md
+|   ├── category2.md
+├── posts/
+|   ├── README.md
+|   ├── my-first-post.md
+├── pt/
+|   ├── index.md
+|   ├── sobre/
+|   |   ├── README.md
+|   ├── contato/
+|   |   ├── README.md
+|   ├── categorias
+|   |   ├── README.md
+|   |   ├── categoria1.md
+|   |   ├── categoria2.md
+|   ├── posts/
+|   |   ├── README.md
+|   |   ├── meu-primeiro-post.md
+├── es/
 ...
 ```
 
@@ -458,7 +458,7 @@ themeConfig: {
         }
       ],
     },
-    '/es/': {
+    '/pt/': {
       ...
       ads: [
         {
