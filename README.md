@@ -3,18 +3,19 @@ A blog theme for VuePress by Ktquez 🤘
 
 > Vuepress does not yet have native support for blogs, but this theme has some practices and customizations to turn into a blog.
 
-## TOC
-- [Installation](https://github.com/ktquez/vuepress-theme-ktquez#installation)
-- [Configuration](https://github.com/ktquez/vuepress-theme-ktquez#configuration)
-- [Translations](https://github.com/ktquez/vuepress-theme-ktquez#translations-of-the-theme)
-- [Newsletter](https://github.com/ktquez/vuepress-theme-ktquez#newsletter)
-- [Responsive images](https://github.com/ktquez/vuepress-theme-ktquez#responsive-post-cover)
-- [Structure](https://github.com/ktquez/vuepress-theme-ktquez#structure-directores-suggestion)
-- [Frontmatter](https://github.com/ktquez/vuepress-theme-ktquez#frontmatter)
-- [Override CSS](https://github.com/ktquez/vuepress-theme-ktquez#override-css-stylus)
-- [Accessibility](https://github.com/ktquez/vuepress-theme-ktquez#the-best-pratice-of-accessibility-includes)
-- [And more](https://github.com/ktquez/vuepress-theme-ktquez#the-best-pratice-of-accessibility-includes)
-- [Theme Starter (soon)](https://github.com/ktquez/vuepress-theme-ktquez#vuepress-theme-ktquez-starter)
+## Table of Contents
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Translations](#translations-of-the-theme)
+- [Newsletter](#newsletter)
+- [Responsive images](#responsive-post-cover)
+- [Structure](#structure-directores-suggestion)
+- [Frontmatter](#frontmatter)
+- [Override CSS](#override-css-stylus)
+- [Accessibility](#the-best-pratice-of-accessibility-includes)
+- [And more](#the-best-pratice-of-accessibility-includes)
+- [Theme Starter (soon)](#vuepress-theme-ktquez-starter)
+- [Tools](#tools)
 
 
 
