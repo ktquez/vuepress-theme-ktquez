@@ -3,6 +3,21 @@ A blog theme for VuePress by Ktquez 🤘
 
 > Vuepress does not yet have native support for blogs, but this theme has some practices and customizations to turn into a blog.
 
+## TOC
+- [Installation](https://github.com/ktquez/vuepress-theme-ktquez#installation)
+- [Configuration](https://github.com/ktquez/vuepress-theme-ktquez#configuration)
+- [Translations](https://github.com/ktquez/vuepress-theme-ktquez#translations-of-the-theme)
+- [Newsletter](https://github.com/ktquez/vuepress-theme-ktquez#newsletter)
+- [Responsive images](https://github.com/ktquez/vuepress-theme-ktquez#responsive-post-cover)
+- [Structure](https://github.com/ktquez/vuepress-theme-ktquez#structure-directores-suggestion)
+- [Frontmatter](https://github.com/ktquez/vuepress-theme-ktquez#frontmatter)
+- [Override CSS](https://github.com/ktquez/vuepress-theme-ktquez#override-css-stylus)
+- [Accessibility](https://github.com/ktquez/vuepress-theme-ktquez#the-best-pratice-of-accessibility-includes)
+- [And more](https://github.com/ktquez/vuepress-theme-ktquez#the-best-pratice-of-accessibility-includes)
+- [Theme Starter (soon)](https://github.com/ktquez/vuepress-theme-ktquez#vuepress-theme-ktquez-starter)
+
+
+
 ## Installation
 
 ```shell
@@ -29,18 +44,28 @@ module.exports = {
   themeConfig: {
     locales: {
       '/': {
-        languages: { label: 'English', shortname: 'EN' }, // Used in the drop down of languages
-        translation: {}, // Look for the "translations section" below
-        logo: { name: 'MY_LOGO_FILENAME', ext: 'png', alt: 'My description about logo' },
-        share: { facebookCaption: 'MY_CAPTION_FB_SHARE', twitterVia: 'MY_TWITTER_NICKNAME' },
+        languages: {                              // Used in the drop down of languages
+          label: 'English', 
+          shortname: 'EN' 
+         }, 
+        translation: {},                          // Look for the "translations section" below
+        logo: { 
+          name: 'MY_LOGO_FILENAME', 
+          ext: 'png', 
+          alt: 'My description about logo' 
+        },
+        share: { 
+          facebookCaption: 'MY_CAPTION_FB_SHARE', 
+          twitterVia: 'MY_TWITTER_NICKNAME' 
+        },
         newsletter: {
-          provider: 'mailchimp',    // Currently supports mailchimp
+          provider: 'mailchimp',                  // Currently supports mailchimp
           action: 'link_form_action_mailchimp'
         },
         copy: '2018 © Ktquez play - <a href="https://vuepress.vuejs.org/" rel="noopener" target="_blank"> MADE WITH VUEPRESS </a>',
         footer: {
           nav1: {
-            title: 'NAVIGATION 1',    // For internal links
+            title: 'NAVIGATION 1',                // For internal links
             items: [
               {
                 label: 'ABOUT',
@@ -50,7 +75,7 @@ module.exports = {
             ]
           },
           nav2: {
-            title: 'NAVIGATION 2', // For external links
+            title: 'NAVIGATION 2',                 // For external links
             items: [
               {
                 label: 'Slack Group',
@@ -62,7 +87,7 @@ module.exports = {
         },
         social: [ 
           {
-            name: 'twitter',  // Look for the "social icon section" below
+            name: 'twitter',                        // Look for the "social icon section" below
             link: 'https://www.twitter.com/ktquez'
           },
           ...
@@ -72,14 +97,14 @@ module.exports = {
     },
     disqus: 'MY_DISQUS_SHORTNAME',
     url: 'https://my_doamin.com',
-    cdn: '',    // If there is a CDN, put the bucket link here.
-    blackWhite: true, // Active toggle for Nocturne mode
-    topNavigation: true, // Turn on the navigation menu above the header
-    searchMaxSuggestions: 7, // Maximum result per search
+    cdn: '',                              // If there is a CDN, put the bucket link here.
+    blackWhite: true,                     // Active toggle for Nocturne mode
+    topNavigation: true,                  // Turn on the navigation menu above the header
+    searchMaxSuggestions: 7,              // Maximum result per search
     responsive: {
-      active: true, // Turn on responsive images on the cover of the post
+      active: true,                       // Turn on responsive images on the cover of the post
       ext: 'png',
-      breakpoints: [320, 427, 524, 680] // Breakpoints used for picture media tag
+      breakpoints: [320, 427, 524, 680]   // Breakpoints used for picture media tag
     },
     share: {
       facebook: { appId: '', version: 'v3.1' }
@@ -174,7 +199,7 @@ themeConfig: {
 }
 ```
 
-With the example above, you need to insert the images with the final `, w_XXX`, for example:
+With the example above, you need to insert the images with the final `,w_XXX`, for example:
 
 If your post is: `/posts/my-first-post.md`  
 Your images should be in `public/images/posts/` and with the following sizes:
@@ -370,7 +395,7 @@ In addition to good practices such as:
 
 ## Anaytics campaign in posts
 
-All posts sharing icons links are included in analytics campaign parameters.
+All posts sharing icons links are included in analytics campaign parameters.  
 `?utm_source=SOCIALNAMECLICKED&utm_medium=share&utm_campaign=single-post`
 
 > With this you can analyze the interaction and shares of your posts.
