@@ -466,6 +466,8 @@ You can copy some assets from the [public folder of the theme](https://github.co
 You can also insert ads in the blog, which are displayed in the sidebar of the home page and the right side of the post.
 Ads are built through an array of objects that we can insert into each themeConfig locale, [example taken from my personal blog](https://github.com/ktquezplay/webapp/blob/master/src/.vuepress/config/locales/en/ads.js)
 
+For example:
+
 ```js
 themeConfig: {
   locales: {
@@ -475,9 +477,9 @@ themeConfig: {
       ads: [
         {
           text: 'Did you know that Udemy has more than 300 web development courses for only R $ 21.99?',
-          link: 'http://bit.ly/desenvolvimento-web-udemy',
+          link: 'http://bit.ly/web-development-udemy',
           image: {
-            src: 'ads/web-development-portugues.png',
+            src: '/web-development-english.png',
             alt: 'Illustration of a user studying online'
           },
           by: {
@@ -509,9 +511,11 @@ themeConfig: {
 }
 ```
 
+**Note, avoid placing words that indicate that it is an ad, to avoid blocking Adblock**
+
 ## Tools
 Tools that can help you:
-- [Slugfy](https://blog.tersmitten.nl/slugify/) - Slug generation, for your links and filenames;
+- [Slugify](https://blog.tersmitten.nl/slugify/) - Slug generation, for your links and filenames;
 - [Responsive breakpoints](http://www.responsivebreakpoints.com/) - Responsive image breakpoints generator for cover images;
 - [SEO Counter](http://www.codeorama.com/seo/counter/) - Is an online word and character counter with SEO rules for title and description;
 
