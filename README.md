@@ -29,20 +29,10 @@ module.exports = {
   themeConfig: {
     locales: {
       '/': {
-        languages: {
-          label: 'English',
-          shortname: 'EN'
-        },
-        translation: {},
-        logo: {
-          name: 'ktquez-play-logo',
-          ext: 'png',
-          alt: 'Logo in 3 colors in play format'
-        },
-        share: {
-          facebookCaption: 'Ktquez Play',
-          twitterVia: 'ktquez',
-        },
+        languages: { label: 'English', shortname: 'EN' }, // Used in the drop down of languages
+        translation: {}, // Look for the "translations section" below
+        logo: { name: 'MY_LOGO_FILENAME', ext: 'png', alt: 'My description about logo' },
+        share: { facebookCaption: 'MY_CAPTION_FB_SHARE', twitterVia: 'MY_TWITTER_NICKNAME' },
         newsletter: {
           provider: 'mailchimp',    // Currently supports mailchimp
           action: 'link_form_action_mailchimp'
@@ -55,7 +45,8 @@ module.exports = {
               {
                 label: 'ABOUT',
                 path: '/about/'
-              }
+              },
+              ...
             ]
           },
           nav2: {
@@ -64,47 +55,42 @@ module.exports = {
               {
                 label: 'Slack Group',
                 link: 'https://my_group.slack.com/'
-              }
+              },
+              ...
             ]
           }
         },
-        social: [
+        social: [ 
           {
-            name: 'twitter',
+            name: 'twitter',  // Look for the "social icon section" below
             link: 'https://www.twitter.com/ktquez'
-          }
+          },
+          ...
         ]
       },
       '/pt/': ... // The same as the example above, but with information from that language
     },
-    disqus: 'ktquez',
-    url: 'https://ktquez.com',
-    cdn: '', // If there is a CDN, put the bucket link here.
+    disqus: 'MY_DISQUS_SHORTNAME',
+    url: 'https://my_doamin.com',
+    cdn: '',    // If there is a CDN, put the bucket link here.
     blackWhite: true, // Active toggle for Nocturne mode
     topNavigation: true, // Turn on the navigation menu above the header
     searchMaxSuggestions: 7, // Maximum result per search
     responsive: {
-      active: true, // Ative as imagens responsivas na capa do post
+      active: true, // Turn on responsive images on the cover of the post
       ext: 'png',
       breakpoints: [320, 427, 524, 680] // Breakpoints used for picture media tag
     },
     share: {
-      facebook: {
-        appId: '',  // Your facebook AppId
-        version: 'v3.1'
-      }
+      facebook: { appId: '', version: 'v3.1' }
     },
-    elevator: {
-      duration: 4000,   // Duration of how long the page will reach the top by clicking on the back to top
-      mainAudio: '/music/elevator.mp3', // Sounds of elevator.js
-      endAudio: '/music/ding.mp3'
-    }
+    elevator: { duration: 4000, mainAudio: '/music/elevator.mp3', endAudio: '/music/ding.mp3' }
   },
   configureWebpack () {
     return {
       resolve: {
         alias: {
-          '@public': resolve('./public')
+          '@public': path.join(__dirname, './public')
         }
       }
     }
