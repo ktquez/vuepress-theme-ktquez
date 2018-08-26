@@ -1,7 +1,7 @@
 <template>
   <div class="observer" :class="{ 'observer--displayed': displayed }">
     <spinner class="observer__spinner" :class="{ 'observer__spinner--hide': displayed }" v-if="spinner" />
-    <component v-if="tag && displayed" :is="current" :data="data" />
+    <component v-if="tag && displayed" :is="current" :tag="tag" :data="data" />
     <slot v-if="!tag && displayed" />
   </div>
 </template>

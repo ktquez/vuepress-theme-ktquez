@@ -3,6 +3,7 @@ import getYouTubeID from 'get-youtube-id'
 
 export default {
   props: {
+    tag: String,
     data: {
       type: Object,
       required: true
