@@ -140,6 +140,7 @@
     height: 72px
 
   &__box1
+    width: 100%
     min-width: 120px
 
     &--left
