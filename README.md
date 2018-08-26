@@ -5,7 +5,7 @@ A blog theme for VuePress by Ktquez 🤘
 
 ## Vuepress theme ktquez starter
 
-I know the theme colors seem like a lot of work though, I've created a [boilerplate](https://github.com/ktquez/vuepress-ktquez-theme-starter) with the settings and structure of folders organized, just clone the repository and change the information for your blog, modify the images and start using.
+I know the theme configuration seems like a lot of work though, I've created a [boilerplate](https://github.com/ktquez/vuepress-ktquez-theme-starter) with the settings and structure of folders organized, just clone the repository and change the information for your blog, modify the images and start using.
 
 https://github.com/ktquez/vuepress-ktquez-theme-starter
 
