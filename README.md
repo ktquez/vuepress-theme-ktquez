@@ -468,6 +468,12 @@ I know that the settings of the theme seem like a lot of work, so I'll leave her
 
 **Soon link here**
 
+## Tools
+Tools that can help you:
+- [Slugfy](https://blog.tersmitten.nl/slugify/) - Slug generation, for your links and filenames;
+- [Responsive breakpoints](http://www.responsivebreakpoints.com/) - Responsive image breakpoints generator for cover images;
+- [SEO Counter](http://www.codeorama.com/seo/counter/) - Is an online word and character counter with SEO rules for title and description;
+
 
 ## License
 
