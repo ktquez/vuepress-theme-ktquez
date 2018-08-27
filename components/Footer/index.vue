@@ -45,7 +45,8 @@
                     class="footer-nav1__item" 
                     v-for="(item, index) in $themeLocaleConfig.footer.nav1.items" 
                     :key="`${item.label}-${index}`">
-                    <router-link :to="item.path">{{ item.label }}</router-link>
+                    <router-link v-if="item.path" :to="item.path">{{ item.label }}</router-link>
+                    <a v-if="item.link" :href="item.link" rel="noopener nofollow" target="_blank">{{ item.label }}</a>
                   </li>
                 </ul>
               </nav>
@@ -60,7 +61,8 @@
                     class="footer-nav2__item" 
                     v-for="(item, index) in $themeLocaleConfig.footer.nav2.items" 
                     :key="`${item.label}-${index}`">
-                    <a :href="item.link" rel="noopener nofollow" target="_blank">{{ item.label }}</a>
+                    <router-link v-if="item.path" :to="item.path">{{ item.label }}</router-link>
+                    <a v-if="item.link" :href="item.link" rel="noopener nofollow" target="_blank">{{ item.label }}</a>
                   </li>
                 </ul>
               </nav>

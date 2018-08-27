@@ -26,7 +26,6 @@ https://github.com/ktquez/vuepress-ktquez-theme-starter
 - [Tools](#tools)
 
 
-
 ## Installation
 
 ```shell
@@ -93,21 +92,21 @@ themeConfig: {
       copy: '2018 © Ktquez play - <a href="https://vuepress.vuejs.org/" rel="noopener" target="_blank"> MADE WITH VUEPRESS </a>',
       footer: {
         nav1: {
-          title: 'NAVIGATION 1',                // For internal links
+          title: 'NAVIGATION 1',                
           items: [
             {
               label: 'ABOUT',
-              path: '/about/'
+              path: '/about/'                         // Use "link" for external links and "path" for internal links
             },
             ...
           ]
         },
         nav2: {
-          title: 'NAVIGATION 2',                 // For external links
+          title: 'NAVIGATION 2',                 
           items: [
             {
               label: 'Slack Group',
-              link: 'https://my_group.slack.com/'
+              link: 'https://my_group.slack.com/'     // Use "link" for external links and "path" for internal links
             },
             ...
           ]
