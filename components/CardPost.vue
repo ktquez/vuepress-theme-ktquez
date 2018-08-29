@@ -22,6 +22,7 @@
               <img    
                 class="card-cover__image card-cover__image--top cover"
                 :src="`${item.coverName},w_${lastBreakpoint}.${extension}`" 
+                :title="item.coverAlt"
                 :alt="item.coverAlt"> 
             </responsive-picture>
           </router-link>
