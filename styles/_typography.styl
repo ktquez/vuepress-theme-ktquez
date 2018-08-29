@@ -36,8 +36,12 @@
 }
 
 body
-  font-family: 'Poppins', Lato, Calibri, Arial
+  font-family: $baseFontFamily
   font-weight: 400
+
+.fonts-loaded body {
+  font-family: 'Poppins', $baseFontFamily
+}
 
 [class^="icon-"], [class*=" icon-"], .icon {
   font-family: 'ktquez' !important

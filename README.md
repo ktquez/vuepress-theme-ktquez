@@ -448,6 +448,8 @@ The theme have as fonts:
 
 > To overwrite the fonts, simply use the `.vuepress/style.styl`. [Ver doc vuepress](https://vuepress.vuejs.org/default-theme-config/#migrate-your-styles-to-style-styl)
 
+**This theme adopts the strategy to load Web fonts using FontFaceObserver**
+
 ## Assets
 
 You can copy some assets from the [public folder of the theme](https://github.com/ktquez/vuepress-theme-ktquez/tree/master/public), they server for you to configure some images as well as files to turn your blog into a PWA (for example the file [manifest.json](https://github.com/ktquez/vuepress-theme-ktquez/tree/master/public)).

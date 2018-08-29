@@ -114,15 +114,32 @@
         EventBus.$on('toggle_black_white', data => {
           this.negative = data
         })
-      }
+      }      
     },
 
     beforeMount () {
       // SW update tip for PWA
       this.$on('sw-updated', this.onSWUpdated)
+      this.handleLoadWebFont()
     },
 
     methods: {
+      handleLoadWebFont () {
+        const poppinsRegular = new FontFaceObserver('Poppins', { weight: 400 })
+        const poppinsBold = new FontFaceObserver('Poppins', { weight: 700 })
+
+        if (sessionStorage.fontsLoaded) {
+          return document.documentElement.classList.add('fonts-loaded')
+        }
+
+        Promise.all([poppinsRegular.load(), poppinsBold.load()]).then(() => {
+          document.documentElement.classList.add('fonts-loaded')
+          sessionStorage.fontsLoaded = true
+        }).catch(() => {
+          sessionStorage.fontsLoaded = false
+        })
+      },
+
       cancel () {
         EventBus.$emit('show_search', false)
         EventBus.$emit('close_overlay', false)
