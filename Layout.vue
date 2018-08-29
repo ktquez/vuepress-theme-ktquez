@@ -118,10 +118,6 @@
     },
 
     beforeMount () {
-      if (this.$themeConfig.blackWhite) {
-        localStorage.removeItem('switch_bw')
-      }
-
       // SW update tip for PWA
       this.$on('sw-updated', this.onSWUpdated)
     },

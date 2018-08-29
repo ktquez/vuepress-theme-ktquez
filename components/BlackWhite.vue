@@ -39,14 +39,14 @@
     },
 
     mounted () {
-      this.toggle = Boolean(localStorage.getItem('switch_bw'))
+      this.toggle = Boolean(sessionStorage.getItem('switch_bw'))
       this.emit()
     },
 
     methods: {
       handle () {
         this.toggle = !this.toggle
-        localStorage.setItem('switch_bw', (this.toggle || ''))
+        sessionStorage.setItem('switch_bw', (this.toggle || ''))
         this.emit()
       },
       emit () {
