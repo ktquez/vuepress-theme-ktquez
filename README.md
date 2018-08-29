@@ -228,22 +228,14 @@ themeConfig: {
 With the example above, you need to insert the images with the final `,w_XXX`, for example:
 
 If your post is: `/posts/my-first-post.md`  
-Your images should be in `public/images/posts/` and with the following sizes:
-- `public/images/posts/my-first-post,w_320.png`
-- `public/images/posts/my-first-post,w_427.png`
-- `public/images/posts/my-first-post,w_524.png`
-- `public/images/posts/my-first-post,w_680.png`
-- `public/images/posts/my-first-post.png` 
+Your images should be in `public/images/posts/__YEAR__/__MONTH__/` and with the following sizes:
+- `public/images/posts/2018/8/my-first-post,w_320.png`
+- `public/images/posts/2018/8/my-first-post,w_427.png`
+- `public/images/posts/2018/8/my-first-post,w_524.png`
+- `public/images/posts/2018/8/my-first-post,w_680.png`
+- `public/images/posts/2018/8/my-first-post.png` 
 
-Because the images are defined by the post structure, for the images of another locale, for example `/pt/`, your images will be in the directory `public/images/pt/posts/`
-- `public/images/pt/posts/my-first-post,w_320.png`
-- `public/images/pt/posts/my-first-post,w_427.png`
-- `public/images/pt/posts/my-first-post,w_524.png`
-- `public/images/pt/posts/my-first-post,w_680.png`
-- `public/images/pt/posts/my-first-post.png` 
-
-> If you don't want to use responsive images, simply disable
-
+**If you don't want to use responsive images, simply disable and to use `public/images/posts/2018/8/my-first-post.png`**
 
 # Structure directores (Suggestion)
 
@@ -310,6 +302,7 @@ title: My First post
 description: 
 excerpt:
 cover: true             # If true it displays the cover image of the post, if it has no image, leave it as false
+coverExt:               # If you want to specify the image extension, PNG is the default
 coverAlt:               # cover alt text
 demo:                   # If you have demo link, insert here, to display the demo demo button in post
 categories:

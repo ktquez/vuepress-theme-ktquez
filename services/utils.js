@@ -1,12 +1,14 @@
 import config from '@source/.vuepress/config'
 
-export function cdn (value) {
-  const getImgPath = getImagePath(value)
-  return config.themeConfig.cdn ? `${config.themeConfig.cdn}${getImgPath}` : '/images' + getImgPath
+export function getImagePost (path) {
+  const slug = getSlug(path)
+  const date = new Date()
+  return themeConfig.cdn ? `${themeConfig.cdn}/${date.getFullYear()}/${date.getMonth() + 1}/${slug}` : `/images/posts/${date.getFullYear()}/${date.getMonth() + 1}/${slug}`
 }
 
-export function getImagePath (value) {
-  return value.replace('.html', '')
+export function getSlug (path) {
+  const [slug] = path.match(/[\w-(.html)]+$/g)
+  return slug.replace('.html', '')
 }
 
 export function filterPages (pages, type) {

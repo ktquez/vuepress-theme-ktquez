@@ -60,7 +60,7 @@
             <img    
               class="post-cover__image cover"
               itemprop="url"  
-              :src="`${currentPost.coverName}.${$themeConfig.responsive.ext}`"
+              :src="`${currentPost.coverName}.${currentPost.coverExt || $themeConfig.responsive.ext || 'png'}`"
               :title="currentPost.coverAlt"
               :alt="currentPost.coverAlt">
           </responsive-picture>

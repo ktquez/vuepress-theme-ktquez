@@ -110,7 +110,7 @@
       },
 
       extension () {
-        return this.$themeConfig.responsive.ext || 'png'
+        return this.item.coverExt || this.$themeConfig.responsive.ext || 'png'
       }
     },
 
