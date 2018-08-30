@@ -315,13 +315,6 @@
     margin-top: 30px
     margin-bottom: 30px
 
-    &.sound-player--soundcloud
-      width: 100%
-      left: -160px
-      
-      @media (max-width: $mobile)
-        left: 0
-
   &__table-contents
     margin-top: 60px
     margin-bottom: 80px
