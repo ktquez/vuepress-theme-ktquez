@@ -1,8 +1,8 @@
 import config from '@source/.vuepress/config'
 
-export function getImagePost (path) {
+export function getImagePost (path, source) {
   const slug = getSlug(path)
-  const date = new Date()
+  const date = new Date(source.frontmatter.created_at)
   return themeConfig.cdn ? `${themeConfig.cdn}/${date.getFullYear()}/${date.getMonth() + 1}/${slug}` : `/images/posts/${date.getFullYear()}/${date.getMonth() + 1}/${slug}`
 }
 
