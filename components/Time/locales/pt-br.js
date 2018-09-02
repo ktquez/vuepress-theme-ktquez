@@ -8,7 +8,7 @@ export default {
   month: 'mês',
   year: 'ano',
   ago: 'atrás',
-  'from now': 'agora mesmo',
+  'from now': 'Para o ar',
   'min to read': 'min leitura',
   'minutes to finish': 'min para terminar'
 }

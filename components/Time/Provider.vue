@@ -28,9 +28,9 @@
     created () {
       const data = this.content || (this.date instanceof Date ? this.date : new Date(this.date))
       import(`@theme/components/Time/locales/${this.lang || this.$lang}.js`).then(module => {
-        this.result = this.translate(timeago[this.type](data), module.default)
+        this.result = this.translate(this.handle(data), module.default)
       }).catch(() => {
-        this.result = timeago[this.type](data)
+        this.result = this.handle(data)
       })
     },
 
@@ -40,6 +40,10 @@
           result = result.replace(key, translate[key])
         })
         return result
+      },
+
+      handle (data) {
+        return this.type === 'mintoread' ? timeago[this.type](data, null, 100) : timeago[this.type](data)
       }
     },
 
