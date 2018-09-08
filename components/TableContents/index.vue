@@ -1,6 +1,6 @@
 <template>
   <div class="table-contents">
-    <h3 class="table-contents__title">{{ $t('table_content') }}</h3>
+    <h3 id="table-of-content" class="table-contents__title">{{ $t('table_content') }}</h3>
     <nav>
       <ol class="table-contents__list">
         <li 
