@@ -54,6 +54,8 @@
   import NProgressMixin from '@theme/mixins/NProgress'
   import AnnouncerMixin from '@theme/mixins/Announcer'
 
+  import FontFaceObserver from 'fontfaceobserver'
+  
   export default {
     name: 'MainLayout',
 
