@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-ktquez",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A blog theme for VuePress by Ktquez",
   "scripts": {
     "dev": "node_modules/.bin/vuepress dev src",
@@ -37,7 +37,8 @@
     "time-ago": "^0.2.1",
     "vue-announcer": "^1.0.2",
     "vue-disqus": "^3.0.4",
-    "vue-global-events": "^1.0.3"
+    "vue-global-events": "^1.0.3",
+    "fontfaceobserver": "^2.0.13"
   },
   "devDependencies": {
     "standard-version": "^4.4.0"
