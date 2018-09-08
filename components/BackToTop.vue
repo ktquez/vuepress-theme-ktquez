@@ -63,7 +63,7 @@
 
       setPanel () {
         window.requestAnimationFrame(() => {
-          const diff = (document.documentElement.scrollHeight - document.documentElement.clientHeight) - 500
+          const diff = (document.documentElement.scrollHeight - document.documentElement.clientHeight) - 1500
           this.show = window.scrollY > diff
           if (window.scrollY === 0) {
             this.fire = false
