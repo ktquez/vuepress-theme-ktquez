@@ -138,7 +138,7 @@
     padding-bottom: 0
 
   &--cover-top .card-title
-    height: 72px
+    height: 84px
 
   &__box1
     width: 100%
