@@ -39,6 +39,7 @@
     },
 
     mounted () {
+      require('intersection-observer')
       this.observer = new IntersectionObserver(([entry]) => {
         if (this.displayed) return
         if (entry && entry.isIntersecting) {
