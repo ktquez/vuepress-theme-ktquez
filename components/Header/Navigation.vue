@@ -1,9 +1,10 @@
 <template>
   <nav class="row justify-center header-nav">
     <router-link
-      v-for="item in navTop"
-      :key="item.key"
       v-if="navTop.length"
+      v-for="item in navTop"
+      :aria-current="$route.fullPath === item.path ? 'page' : null"
+      :key="item.key"
       :to="item.path" 
       :class="`header-nav__link column xs-50 sm-25 header-nav__link--${item.frontmatter.slug}`">
       {{ item.frontmatter.shortLabel || item.frontmatter.title }}

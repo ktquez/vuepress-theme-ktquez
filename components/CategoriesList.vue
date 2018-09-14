@@ -7,7 +7,10 @@
         v-if="$categories.length"
         v-for="category in getCategories"
         :key="category.key">
-          <router-link class="categories__link" :to="category.path">
+          <router-link 
+            class="categories__link" 
+            :to="category.path"
+            :aria-current="$route.fullPath === category.path ? 'page' : null">
             <bullet v-if="bullets" :type="category.frontmatter.slug" size="small" />
             <span class="meta-text">{{ category.frontmatter.title }}</span>
           </router-link>
