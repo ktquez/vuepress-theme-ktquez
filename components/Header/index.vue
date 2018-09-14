@@ -14,12 +14,14 @@
         <languages class="header-top__languages" />
       </div>
       <div class="column xs-33 sm-60">
-        <h1 class="header-top-logo">
-          <router-link :to="$localeConfig.path" class="header-top-logo__link" itemprop="url">
-            <logo itemprop="logo" />
-          </router-link>
+        <h1 class="header-top-logo" v-if="$page.frontmatter.view === 'home'">
+          <logo />
           <span class="header-top-logo__title">{{ $site.title }}</span>
         </h1>
+
+        <div v-else>
+          <logo />          
+        </div>
 
         <meta itemprop="name" :content="$site.title">
         <meta 
