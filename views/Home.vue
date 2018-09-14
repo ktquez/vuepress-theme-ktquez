@@ -1,6 +1,6 @@
 <template>
   <div class="page home">
-    <section class="row" v-if="$posts.length">
+    <div class="row" v-if="$posts.length">
       <div class="home__first-card column md-50">
         <card-post :item="latestPosts[0]" cover="top" />
       </div>
@@ -15,7 +15,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
     <section v-if="$themeLocaleConfig.newsletter.action" class="row section-newsletter justify-center">
       <div class="column sm-100 md-67 xl-50">
