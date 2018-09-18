@@ -3,7 +3,7 @@
     class="container nav-mobile"
     aria-label="Navigation" 
     itemscope itemtype="https://schema.org/SiteNavigationElement">
-    <h3 itemprop="headline" class="nav-mobile__title">{{ $t('navigation') }}</h3>
+    <span itemprop="headline" class="nav-mobile__title">{{ $t('navigation') }}</span>
     <ul class="nav-mobile__list">
       <li 
         class="nav-mobile__item"
@@ -45,6 +45,9 @@
   position: relative
 
   &__title
+    display: block
+    font-weight: bold
+    font-size: 18px
     padding-top: 20px
     text-align: center
     text-transform: uppercase
