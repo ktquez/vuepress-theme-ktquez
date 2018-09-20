@@ -52,7 +52,7 @@
           </div>          
         </header>
 
-        <section 
+        <div 
           v-if="currentPost.cover && !currentPost.video"
           class="post-cover" 
           itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
@@ -64,7 +64,7 @@
               :title="currentPost.coverAlt"
               :alt="currentPost.coverAlt">
           </responsive-picture>
-        </section>
+        </div>
 
         <section class="post-cover post-cover--video" v-if="currentPost.video">
           <lazy-load tag="iframe" :data="{ src: currentPost.video, height: '100%' }" />
@@ -102,7 +102,7 @@
                 </div>
               </div>
               <div class="post-content__excerpt">
-                <h2 class="page-header__subtitle" itemprop="description">{{ currentPost.excerpt }}</h2>
+                <h2 class="page-header__subtitle" itemprop="description" v-if="currentPost.excerpt">{{ currentPost.excerpt }}</h2>
               </div>
               <div class="post-content__table-contents" v-if="$page.headers">
                 <table-contents :headers="$page.headers" />
