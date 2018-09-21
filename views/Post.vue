@@ -124,9 +124,9 @@
               <hr class="divider">
               <section class="post-content__disqus">
                 <h3>{{ $t('text_comments') }}</h3>
-                <lazy-load>
+                <ClientOnly>
                   <vue-disqus class="mt-30" :shortname="$themeConfig.disqus" />
-                </lazy-load>
+                </ClientOnly>
               </section>
             </aside>
           </div>
