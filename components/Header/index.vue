@@ -14,12 +14,11 @@
         <languages class="header-top__languages" />
       </div>
       <div class="column xs-33 sm-60">
-        <h1 class="header-top-logo" v-if="$page.frontmatter.view === 'home'">
+        <h1 class="header__logo" v-if="$page.frontmatter.view === 'home'">
           <logo />
-          <span class="header-top-logo__title">{{ $site.title }}</span>
         </h1>
 
-        <div v-else>
+        <div class="header__logo" v-else>
           <logo />          
         </div>
 
@@ -93,6 +92,9 @@
     position: relative
     z-index: 20
 
+  &__logo
+    text-align: center
+
 .header-navigation.header-nav
   position: relative
 
@@ -112,46 +114,7 @@
     position: absolute
     bottom: -35px
     right: 10px
-
-  &-logo
-    display: block
-    font-weight: bold
-    position: relative
-    text-align: center
-    width: 100%
-    transition: opacity .5s .5s ease-in-out, top .5s .5s ease-in-out
-
-    &__link
-      position: relative
-      background-color: white
-      z-index: 1
-      display: inline-block
-      width: 100%
-
-    &__title
-      position: absolute 
-      left: 0
-      top: 0
-      z-index: 0
-      font-size: 10px
-
-    @media (max-width: $max-tablet)
-      left: initial
-
-    &:focus
-      color: $textColor
-
-    .txt
-      position: relative
-      top: -14px
-      font-size: 18px
-
-      @media (max-width: $max-tablet)
-        display: none
-    
-    img
-      margin: 0 10px
-      max-width: 37px
+  
 
   &__languages
     position: absolute
