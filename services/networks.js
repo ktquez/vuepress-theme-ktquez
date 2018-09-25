@@ -30,7 +30,7 @@ export default [
     name: 'linkedin',
     label: 'linkedin',
     link (title, link, image, description) {
-      return encodeURI(`https://www.linkedin.com/shareArticle?mini=true&url=${link}&title=${title}&summary=${description}&source=`)
+      return encodeURI(`https://www.linkedin.com/shareArticle?mini=true&amp;url=${link}&amp;title=${title}&amp;summary=${description}&amp;source=`)
     },
     target: '_blank'
   },

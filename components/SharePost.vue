@@ -52,7 +52,7 @@
 
     methods: {
       getFullURL (source) {
-        return this.$themeConfig.url + this.post.path + `?utm_source=${source}&utm_medium=single-post&utm_campaign=share`
+        return this.$themeConfig.url + this.post.path + `?utm_source=${source}&amp;utm_medium=single-post&amp;utm_campaign=share`
       },
 
       getLinkInfo (post, network) {
@@ -98,7 +98,7 @@
           method: 'feed',
           display: 'popup',
           name: meta.name,
-          link: meta.link + '?utm_source=facebook&utm_medium=single-post&utm_campaign=share',
+          link: meta.link + '?utm_source=facebook&amp;utm_medium=single-post&amp;utm_campaign=share',
           picture: meta.picture,
           caption: meta.caption,
           description: meta.description
