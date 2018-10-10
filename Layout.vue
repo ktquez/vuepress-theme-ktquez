@@ -173,7 +173,7 @@
     &.layout-main__nm--opened,
     *:not(.no_bw):not([class*='switch-bw']):not([class*='hamburguer__']):not([class*='language-']):not(code):not(.token)
       background-color: black !important
-      color: white !important
+      color: #ccc !important
       box-shadow: none !important
       fill: black !important
 
