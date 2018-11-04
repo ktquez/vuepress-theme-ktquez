@@ -24,7 +24,6 @@
           <li class="tags__item" v-for="tag in getAllTags" :key="tag">
             <router-link 
               class="tags__link"
-              rel="nofollow"
               :to="{ path: `${$localePath}${$t('path_route_posts')}/`, query: { tag } }">
                 {{ tag }}
             </router-link>
