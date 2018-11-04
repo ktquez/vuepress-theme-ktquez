@@ -22,7 +22,7 @@ https://github.com/ktquez/vuepress-theme-ktquez-starter
 - [Override CSS](#override-css-stylus)
 - [Accessibility](#the-best-pratice-of-accessibility-includes)
 - [Lazy-Load](#lazy-load)
-- [And more](#the-best-pratice-of-accessibility-includes)
+- [And more](#and-more)
 - [Tools](#tools)
 
 
