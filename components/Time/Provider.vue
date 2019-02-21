@@ -37,7 +37,10 @@
     methods: {
       translate (result, translate) {
         Object.keys(translate).forEach(key => {
-          result = result.replace(key, translate[key])
+          let regex = new RegExp(key, 'i')
+          if (result.match(regex)) {
+            result = result.replace(key, translate[key])
+          }
         })
         return result
       },
