@@ -26,5 +26,9 @@ export function sortArrayByProp (arr, prop, orderBy = 'asc') {
 }
 
 export function getTime (date) {
-  return new Date(date).getTime()
+  return getDate(date).getTime()
+}
+
+export function getDate (date) {
+  return (date instanceof Date ? date : new Date(date.replace(/\s+/g, 'T')))
 }

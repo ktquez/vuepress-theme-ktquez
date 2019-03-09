@@ -1,5 +1,5 @@
 import mappet from 'mappet'
-import { getImagePost, getTime } from '@theme/services/utils'
+import { getImagePost, getTime, getDate } from '@theme/services/utils'
 
 const schema = {
   title: 'title',
@@ -12,8 +12,8 @@ const schema = {
   excerpt: 'frontmatter.excerpt',
   categories: 'frontmatter.categories',
   tags: 'frontmatter.tags',
-  created_at: 'frontmatter.created_at',
-  updated_at: 'frontmatter.updated_at',
+  created_at: { path: 'frontmatter.created_at', modifier: getDate },
+  updated_at: { path: 'frontmatter.updated_at', modifier: getDate },
   cover: 'frontmatter.cover',
   coverExt: 'frontmatter.coverExt',
   coverAlt: 'frontmatter.coverAlt',

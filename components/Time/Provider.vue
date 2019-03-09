@@ -26,7 +26,7 @@
     },
 
     created () {
-      const data = this.content || (this.date instanceof Date ? this.date : new Date(this.date.replace(/\s+/g, 'T')))
+      const data = this.content || (this.date instanceof Date ? this.date : new Date(this.date))
       import(`@theme/components/Time/locales/${this.lang || this.$lang}.js`).then(module => {
         this.result = this.translate(this.handle(data), module.default)
       }).catch(() => {
