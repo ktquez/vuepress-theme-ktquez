@@ -32,7 +32,3 @@ export function getTime (date) {
 export function getDate (date) {
   return (date instanceof Date ? date : new Date(date.replace(/\s+/g, 'T')));
 }
-
-export function getDate (date) {
-  return (date instanceof Date ? date : new Date(date.replace(/\s+/g, 'T')))
-}
