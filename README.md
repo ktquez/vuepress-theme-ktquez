@@ -1,5 +1,5 @@
 # vuepress-theme-ktquez
-A blog theme for VuePress by Ktquez 🤘
+A blog theme for VuePress by Ktquez 🤘🤘
 
 > Vuepress does not yet have native support for blogs, but this theme has some practices and customizations to turn into a blog.
 
