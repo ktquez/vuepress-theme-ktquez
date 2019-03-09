@@ -125,7 +125,7 @@
               <section class="post-content__disqus">
                 <h3>{{ $t('text_comments') }}</h3>
                 <ClientOnly>
-                  <vue-disqus class="mt-30" :shortname="$themeConfig.disqus" />
+                  <vue-disqus class="mt-30" :shortname="$themeConfig.disqus" :identifier="$themeConfig.disqus" />
                 </ClientOnly>
               </section>
             </aside>
