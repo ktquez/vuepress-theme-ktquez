@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.16"></a>
+## [0.2.16](https://github.com/ktquez/vuepress-theme-ktquez/compare/v0.2.15...v0.2.16) (2019-03-09)
+
+
+### Bug Fixes
+
+* Fix convert from string to date bug on safari ([10482b1](https://github.com/ktquez/vuepress-theme-ktquez/commit/10482b1))
+* Fix convert from string to date bug on safari ([a9abcee](https://github.com/ktquez/vuepress-theme-ktquez/commit/a9abcee))
+
+
+
 <a name="0.2.15"></a>
 ## [0.2.15](https://github.com/ktquez/vuepress-theme-ktquez/compare/v0.2.14...v0.2.15) (2019-02-21)
 
