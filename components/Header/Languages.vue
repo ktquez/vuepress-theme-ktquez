@@ -1,7 +1,7 @@
 <template>
   <div class="languages" v-if="languages.length"> 
     <div class="languages__box">
-      <span class="languages__title meta-text">{{ getCurrentLanguage.shortname }}</span>
+      <span class="languages__title meta-text">{{ getCurrentLanguage.label }}</span>
       <span class="languages__icon"></span>
     </div>
     <ul class="languages__list">
