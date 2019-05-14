@@ -21,7 +21,7 @@
             <responsive-picture :coverName="item.coverName">
               <img    
                 class="card-cover__image card-cover__image--top cover"
-                :src="`${item.coverName},w_${lastBreakpoint}.${extension}`" 
+                :src="$withBase(`${item.coverName},w_${lastBreakpoint}.${extension}`)" 
                 :title="item.coverAlt"
                 :alt="item.coverAlt"> 
             </responsive-picture>
@@ -66,7 +66,7 @@
       <router-link :to="item.path">
         <img 
           class="card-cover__image card-cover__image--side cover" 
-          :src="getSideImage(item.coverName)" 
+          :src="$withBase(getSideImage(item.coverName))" 
           :alt="item.coverAlt">
       </router-link>
     </div>
@@ -74,176 +74,222 @@
 </template>
 
 <script>
-  import ResponsivePicture from '@theme/components/ResponsivePicture'
+import ResponsivePicture from "@theme/components/ResponsivePicture";
 
-  export default {
-    name: 'CardPost',
+export default {
+  name: "CardPost",
 
-    components: {
-      ResponsivePicture,
-      bullet: () => import(/* webpackChunkName = "Bullet" */ '@theme/components/Bullet'),
-      TimeProvider: () => import(/* webpackChunkName = "Newsletter" */ '@theme/components/Time/Provider')
+  components: {
+    ResponsivePicture,
+    bullet: () =>
+      import(/* webpackChunkName = "Bullet" */ "@theme/components/Bullet"),
+    TimeProvider: () =>
+      import(/* webpackChunkName = "Newsletter" */ "@theme/components/Time/Provider")
+  },
+
+  props: {
+    item: {
+      type: Object,
+      required: true
     },
 
-    props: {
-      item: {
-        type: Object,
-        required: true
-      },
+    cover: {
+      type: [String, Boolean],
+      default: false
+    }
+  },
 
-      cover: {
-        type: [String, Boolean],
-        default: false
-      }
+  computed: {
+    getCurrentCategory() {
+      return this.$site.pages.filter(page => {
+        return (
+          this.item.lang === page.frontmatter.lang &&
+          page.frontmatter.slug === this.item.categories[0]
+        );
+      })[0];
     },
 
-    computed: {
-      getCurrentCategory () {
-        return this.$site.pages.filter(page => {
-          return this.item.lang === page.frontmatter.lang && page.frontmatter.slug === this.item.categories[0]
-        })[0]
-      },
-
-      lastBreakpoint () {
-        const bp = this.$themeConfig.responsive.breakpoints
-        return bp[bp.length - 1] || 680
-      },
-
-      extension () {
-        return this.item.coverExt || this.$themeConfig.responsive.ext || 'png'
-      }
+    lastBreakpoint() {
+      const bp = this.$themeConfig.responsive.breakpoints;
+      return bp[bp.length - 1] || 680;
     },
 
-    methods: {
-      isCoverPosition (position) {
-        return this.cover === position
-      },
-      getSideImage (coverName) {
-        if (this.$themeConfig.responsive.active) {
-          return `${coverName},w_${this.$themeConfig.responsive.breakpoints[0]}.${this.extension}`
-        }
-        return `${coverName}.${this.extension}`
+    extension() {
+      return this.item.coverExt || this.$themeConfig.responsive.ext || "png";
+    }
+  },
+
+  methods: {
+    isCoverPosition(position) {
+      return this.cover === position;
+    },
+    getSideImage(coverName) {
+      if (this.$themeConfig.responsive.active) {
+        return `${coverName},w_${this.$themeConfig.responsive.breakpoints[0]}.${
+          this.extension
+        }`;
       }
+      return `${coverName}.${this.extension}`;
     }
   }
+};
 </script>
 
 <style lang="stylus">
-@import '~@theme/styles/config.styl'
+@import '~@theme/styles/config.styl';
 
-.card
-  display: flex
-  
-  &.box-default
-    padding-bottom: 0
+.card {
+  display: flex;
 
-  &--cover-top .card-title
-    height: 84px
+  &.box-default {
+    padding-bottom: 0;
+  }
 
-  &__box1
-    width: 100%
-    min-width: 120px
+  &--cover-top .card-title {
+    height: 84px;
+  }
 
-    &--left
-      order: 2
-      padding-right: 30px
+  &__box1 {
+    width: 100%;
+    min-width: 120px;
 
-  &__box2
-    min-width: 120px
+    &--left {
+      order: 2;
+      padding-right: 30px;
+    }
+  }
 
-    &--left
-      order: 1
-      padding-right: 30px
+  &__box2 {
+    min-width: 120px;
 
-    &--right
-      padding-left: 30px
+    &--left {
+      order: 1;
+      padding-right: 30px;
+    }
 
-  @media (max-width: $max-tablet)
-    &__box1
-      width: 100%
+    &--right {
+      padding-left: 30px;
+    }
+  }
 
-    &__box2
-      display: none
+  @media (max-width: $max-tablet) {
+    &__box1 {
+      width: 100%;
+    }
 
-.card-category
-  &__link
-    display: inline-block
-    margin-bottom: 10px
+    &__box2 {
+      display: none;
+    }
+  }
+}
 
-.card-cover
-  width: 100%
-  height: 150px
-  margin-bottom: 20px
+.card-category {
+  &__link {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+}
 
-  &__image
-    width: 100%
-    -o-object-fit: cover
-    object-fit: cover
+.card-cover {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 20px;
 
-    &--top
-      height: 150px
+  &__image {
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
 
-    &--side
-      height: 120px
+    &--top {
+      height: 150px;
+    }
 
-.card-title
-  display: block
-  height: 60px
+    &--side {
+      height: 120px;
+    }
+  }
+}
 
-  &__text
-    font-size: $title3
-    line-height: $title3
-    font-weight: bold
+.card-title {
+  display: block;
+  height: 60px;
 
-    @media (max-width: $min-large)
-      font-size: $regularText
-      line-height: $regularText
+  &__text {
+    font-size: $title3;
+    line-height: $title3;
+    font-weight: bold;
 
-  @media (max-width: $max-tablet)
-    height: max-content !important
-    padding-bottom: 20px
+    @media (max-width: $min-large) {
+      font-size: $regularText;
+      line-height: $regularText;
+    }
+  }
 
-.card-info.row
-  border-top: .5px solid $borderColor
+  @media (max-width: $max-tablet) {
+    height: max-content !important;
+    padding-bottom: 20px;
+  }
+}
 
-  .column
-    padding: 0
+.card-info.row {
+  border-top: 0.5px solid $borderColor;
 
-.card-info
-  &__item
-    display: inline-flex
+  .column {
+    padding: 0;
+  }
+}
 
-    .youtube-play
-      top: 3px 
+.card-info {
+  &__item {
+    display: inline-flex;
 
+    .youtube-play {
+      top: 3px;
+    }
+  }
+}
 
-.card-readtime, .card-timeago, .card-readmore
-  font-size: $smallText
-  color: $textLightColor
-  padding: 16px 0
+.card-readtime, .card-timeago, .card-readmore {
+  font-size: $smallText;
+  color: $textLightColor;
+  padding: 16px 0;
+}
 
-.card-readmore
-  position: relative
-  right: 4px
-  display: block
-  text-align: right
+.card-readmore {
+  position: relative;
+  right: 4px;
+  display: block;
+  text-align: right;
 
-  &__icon
-    margin-left: 6px
+  &__icon {
+    margin-left: 6px;
+  }
 
-  &__text
-    text-transform: uppercase
+  &__text {
+    text-transform: uppercase;
+  }
 
-  &:hover
-    .card-readmore__icon
-      animation-name: arrow
-      animation-duration: .5s
-      animation-timing-function: ease-out
-      animation-iteration-count: infinite
+  &:hover {
+    .card-readmore__icon {
+      animation-name: arrow;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: infinite;
+    }
+  }
+}
 
 @keyframes arrow {
-  0% { left: 0px }
-  50% { left: 6px }
-  100% { left: -5px }
+  0% {
+    left: 0px;
+  }
+
+  50% {
+    left: 6px;
+  }
+
+  100% {
+    left: -5px;
+  }
 }
 </style>

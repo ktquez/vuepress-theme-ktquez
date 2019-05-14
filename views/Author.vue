@@ -7,7 +7,7 @@
       <div class="column xsNone sm-20">
         <img 
           class="author__avatar" 
-          :src="$page.frontmatter.avatar" 
+          :src="$withBase($page.frontmatter.avatar)" 
           :alt="`${$t('avatar_of')} ${$page.frontmatter.name}`" />
       </div>
       <div class="column xs-100 sm-80">
@@ -73,76 +73,93 @@
 </template>
 
 <script>
-  import CardPost from '@theme/components/CardPost'
+import CardPost from "@theme/components/CardPost";
 
-  import PostsMixin from '@theme/mixins/Posts'
+import PostsMixin from "@theme/mixins/Posts";
 
-  export default {
-    name: 'AllPosts',
+export default {
+  name: "AllPosts",
 
-    mixins: [PostsMixin],
+  mixins: [PostsMixin],
 
-    components: {
-      CardPost,
-      BackButton: () => import(/* webpackChunkName = "BackButton" */ '@theme/components/BackButton'),
-      TimeProvider: () => import(/* webpackChunkName = "Newsletter" */ '@theme/components/Time/Provider'),
-      Newsletter: () => import(/* webpackChunkName = "Newsletter" */ '@theme/components/Newsletter')
+  components: {
+    CardPost,
+    BackButton: () =>
+      import(/* webpackChunkName = "BackButton" */ "@theme/components/BackButton"),
+    TimeProvider: () =>
+      import(/* webpackChunkName = "Newsletter" */ "@theme/components/Time/Provider"),
+    Newsletter: () =>
+      import(/* webpackChunkName = "Newsletter" */ "@theme/components/Newsletter")
+  },
+
+  computed: {
+    amountPostsAuthor() {
+      const amount = this.getPostsByAuthor(0);
+      return `${amount.length} ${this.$t("article")}${
+        amount.length > 1 ? "s" : ""
+      }`;
+    }
+  },
+
+  methods: {
+    getPosts(start, end) {
+      return [...this.postsByLang].splice(
+        start,
+        end || this.postsByLang.length
+      );
     },
 
-    computed: {
-      amountPostsAuthor () {
-        const amount = this.getPostsByAuthor(0)
-        return `${amount.length} ${this.$t('article')}${amount.length > 1 ? 's' : ''}`
-      }
-    },
-
-    methods: {
-      getPosts (start, end) {
-        return [...this.postsByLang].splice(start, (end || this.postsByLang.length))
-      },
-
-      getPostsByAuthor (start, end) {
-        return this.getPosts(start, end).filter(post => {
-          return post.author === this.$page.frontmatter.nickname
-        })
-      }
+    getPostsByAuthor(start, end) {
+      return this.getPosts(start, end).filter(post => {
+        return post.author === this.$page.frontmatter.nickname;
+      });
     }
   }
+};
 </script>
 
 <style lang="stylus">
-@import '~@theme/styles/config.styl'
+@import '~@theme/styles/config.styl';
 
-.author
-  &__avatar
-    width: 100%
-    border-radius: 50%
+.author {
+  &__avatar {
+    width: 100%;
+    border-radius: 50%;
+  }
 
-  &__title.page-header__title
-    font-size: 2.5em
+  &__title.page-header__title {
+    font-size: 2.5em;
+  }
+}
 
-.author-joined
-  margin-bottom: 40px
-  color: $textColor
-  font-size: $mediumText
+.author-joined {
+  margin-bottom: 40px;
+  color: $textColor;
+  font-size: $mediumText;
 
-  &__icon
-    top: 10px
-    font-size: $title2
-    color: black
+  &__icon {
+    top: 10px;
+    font-size: $title2;
+    color: black;
+  }
+}
 
-.author-social
-  &__list
-    margin-left: -12px
+.author-social {
+  &__list {
+    margin-left: -12px;
+  }
 
-  &__item
-    display: inline-flex
-    margin-right: 2px
+  &__item {
+    display: inline-flex;
+    margin-right: 2px;
+  }
 
-  &__link
-    padding: 8px 10px
+  &__link {
+    padding: 8px 10px;
+  }
 
-  &__icon
-    font-size: $title2
-
+  &__icon {
+    font-size: $title2;
+  }
+}
 </style>
