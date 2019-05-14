@@ -7,7 +7,7 @@
       <div class="column xs-33">
         <img 
           class="card-author__avatar" 
-          :src="author.frontmatter.avatar" 
+          :src="$withBase(author.frontmatter.avatar)" 
           itemprop="image"
           :alt="`${$t('avatar_of')} ${author.frontmatter.name}`" />
       </div>
@@ -52,99 +52,118 @@
 </template>
 
 <script>
-  import PostsMixin from '@theme/mixins/Posts'
-  
-  export default {
-    name: 'CardAuthor',
+import PostsMixin from "@theme/mixins/Posts";
 
-    mixins: [PostsMixin],
+export default {
+  name: "CardAuthor",
 
-    components: {
-      bullet: () => import(/* webpackChunkName = "Bullet" */ '@theme/components/Bullet'),
-      TimeProvider: () => import(/* webpackChunkName = "Newsletter" */ '@theme/components/Time/Provider')
+  mixins: [PostsMixin],
+
+  components: {
+    bullet: () =>
+      import(/* webpackChunkName = "Bullet" */ "@theme/components/Bullet"),
+    TimeProvider: () =>
+      import(/* webpackChunkName = "Newsletter" */ "@theme/components/Time/Provider")
+  },
+
+  props: {
+    author: {
+      type: Object,
+      required: true
+    },
+    shadow: {
+      type: Boolean,
+      default: true
+    }
+  },
+
+  methods: {
+    getPostsByAuthor(nickname) {
+      return this.postsByLang.filter(post => {
+        return post.author === nickname;
+      });
     },
 
-    props: {
-      author: {
-        type: Object,
-        required: true
-      },
-      shadow: {
-        type: Boolean,
-        default: true
-      }
-    },
-
-    methods: {
-      getPostsByAuthor (nickname) {
-        return this.postsByLang.filter(post => {
-          return post.author === nickname
-        })
-      },
-
-      getAmountPostsByAuthor (nickname) {
-        const posts = this.getPostsByAuthor(nickname)
-        return `${posts.length} ${this.$t('article')}${posts.length > 1 ? 's' : ''}`
-      }
+    getAmountPostsByAuthor(nickname) {
+      const posts = this.getPostsByAuthor(nickname);
+      return `${posts.length} ${this.$t("article")}${
+        posts.length > 1 ? "s" : ""
+      }`;
     }
   }
+};
 </script>
 
 <style lang="stylus">
-@import '~@theme/styles/config.styl'
+@import '~@theme/styles/config.styl';
 
-.card-author
-  position: relative
-  max-height: 150px
-  max-width: 500px
+.card-author {
+  position: relative;
+  max-height: 150px;
+  max-width: 500px;
 
-  &--no-shadow.box-default
-    box-shadow: none
+  &--no-shadow.box-default {
+    box-shadow: none;
+  }
 
-  &__avatar
-    width: 100%
-    max-width: 120px
-    max-height: 120px
-    border-radius: 50%
+  &__avatar {
+    width: 100%;
+    max-width: 120px;
+    max-height: 120px;
+    border-radius: 50%;
+  }
 
-  &__link
-    &:hover
-      color: $primaryColor
+  &__link {
+    &:hover {
+      color: $primaryColor;
+    }
+  }
+}
 
-.card-author-info
-  &__title
-    @media (max-width: $max-tablet)
-      font-size: $regularText
+.card-author-info {
+  &__title {
+    @media (max-width: $max-tablet) {
+      font-size: $regularText;
+    }
+  }
 
-  &.column
-    padding-left: 15px !important
+  &.column {
+    padding-left: 15px !important;
+  }
 
-  &__joined
-    color: $textColor
-    font-size: $mediumText
-    margin-top: 2px
+  &__joined {
+    color: $textColor;
+    font-size: $mediumText;
+    margin-top: 2px;
 
-    .icon
-      top: 5px
-      font-size: $regularText
-      color: black
+    .icon {
+      top: 5px;
+      font-size: $regularText;
+      color: black;
+    }
 
-    .text
-      font-size: $smallText
+    .text {
+      font-size: $smallText;
+    }
+  }
+}
 
-.card-author-social
-  &__list
-    margin-left: -12px
+.card-author-social {
+  &__list {
+    margin-left: -12px;
+  }
 
-  &__item
-    display: inline-flex
-    margin-right: 2px
+  &__item {
+    display: inline-flex;
+    margin-right: 2px;
+  }
 
-  &__link
-    padding: 8px 10px
+  &__link {
+    padding: 8px 10px;
+  }
 
-  &__icon
-    font-size: $title3
-
-
+  &__icon {
+    font-size: $title3;
+  }
+}
 </style>

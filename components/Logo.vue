@@ -6,8 +6,8 @@
     itemprop="url">
     <img 
       itemprop="logo"
-      :src="`/${$themeLocaleConfig.logo.name}.${$themeLocaleConfig.logo.ext}`" 
-      :srcset="`/${$themeLocaleConfig.logo.name}.${$themeLocaleConfig.logo.ext} 1x, /${$themeLocaleConfig.logo.name}@2x.${$themeLocaleConfig.logo.ext} 2x`" 
+      :src="$withBase(`/${$themeLocaleConfig.logo.name}.${$themeLocaleConfig.logo.ext}`)" 
+      :srcset="$withBase(`/${$themeLocaleConfig.logo.name}.${$themeLocaleConfig.logo.ext}`) + ' 1x, ' + $withBase(`/${$themeLocaleConfig.logo.name}@2x.${$themeLocaleConfig.logo.ext}`) +  '2x'" 
       :alt="$themeLocaleConfig.logo.alt">
   </router-link>
   <div v-else>
@@ -16,12 +16,11 @@
 </template>
 
 <script>
-  export default {
-    name: 'Logo',
-  }
+export default {
+  name: "Logo"
+};
 </script>
 
 <style lang="stylus">
-@import '~@theme/styles/config.styl'
-
+@import '~@theme/styles/config.styl';
 </style>

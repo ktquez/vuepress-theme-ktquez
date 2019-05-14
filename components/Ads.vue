@@ -3,7 +3,7 @@
     <div class="bizu-image">
       <span class="bizu-close" @click="hideBizu = true">&times;</span>
       <a :href="getAd.link" target="_blank" rel="nofollow noopener">
-        <img :src="getAd.image.src" :alt="getAd.image.alt" class="bizu-image__image" />
+        <img :src="$withBase(getAd.image.src)" :alt="getAd.image.alt" class="bizu-image__image" />
       </a>
     </div>
     <div class="bizu-info">
